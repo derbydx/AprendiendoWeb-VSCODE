@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Formulario  sencillo HTML -->   
+    <h1>Formulario de contacto</h1>
+    <form action="submit_form.php" method="post">
+        <label for="name">Nombre:</label><br>
+        <input type="text" id="name" name="name" placeholder="Escribe tu nombre"><br><br>
+
+        <label for="email">Correo electrónico:</label><br>
+        <input type="email" required id="email" name="email"><br><br>
+
+        <label for="message">Mensaje:</label><br>
+        <textarea id="message" name="message"></textarea><br><br>
+
+        <input type="submit" value="Enviar">
+
+        <p>
+
+    </form>
+            <h2>Eventos en JavaScript</h2>
+   <!-- Eventos de MOuse 
+    onclick on dblclic onmoseover-->
+    <h4>Eventos de mouse</h4>
+    <button type="button" onclick="alert('¡Botón clickeado!')">Haz clic aquí</button>
+    
+    <!--Eventos de teclado-->  
+    <h4>Eventos de teclado</h4>
+    <input type="text" id="inputField" onkeypress="alert('Tecla presionada: ' + event.key)">    
+    <!--Eventos de formulario-->
+    <h4>Eventos de formulario</h4>
+    <form onsubmit="alert('Formulario enviado'); return false;">
+        <input type="text" placeholder="Escribe algo">
+        <input type="submit" value="Enviar">
+</body>
+</html>
