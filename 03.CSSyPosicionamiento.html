@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Posicionamiento CSS</title>
+    <style>
+        /* Estilos generales para que se vea limpio */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            /* Agregamos mucha altura para poder hacer scroll y probar el botón fijo */
+            height: 2000px; 
+        }
+
+        h1, p {
+            color: #333;
+        }
+
+        /* ---------------------------------------------------
+           1. EJEMPLO: RELATIVO Y ABSOLUTO (El Padre y el Hijo)
+           --------------------------------------------------- */
+        
+        .caja-padre {
+            /* IMPORTANTE: Al ser relative, se convierte en el "ancla" de sus hijos absolutos */
+            position: relative; 
+            width: 300px;
+            height: 200px;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 50px;
+        }
+
+        .caja-hija {
+            /* IMPORTANTE: Al ser absolute, se mueve libremente, pero DENTRO del Padre */
+            position: absolute;
+            
+            /* Lo pegamos a la esquina inferior derecha del padre */
+            bottom: 10px; 
+            right: 10px;  
+            
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        /* ---------------------------------------------------
+           2. EJEMPLO: FIJO (El Botón Flotante)
+           --------------------------------------------------- */
+
+        .boton-flotante {
+            /* IMPORTANTE: Al ser fixed, se despega del documento y se ancla a la pantalla del navegador */
+            position: fixed;
+            
+            /* Lo ubicamos en la esquina inferior derecha de la pantalla */
+            bottom: 30px;
+            right: 30px;
+            
+            background-color: #27ae60;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%; /* Esto lo hace un círculo perfecto */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            
+            /* El z-index asegura que el botón siempre esté por encima de cualquier otro elemento */
+            z-index: 1000; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Prueba de Posicionamiento CSS</h1>
+    <p>Haz scroll hacia abajo y nota cómo el botón verde nunca desaparece de la pantalla.</p>
+
+    <div class="caja-padre">
+        Soy la Caja Padre (position: relative). <br><br>
+        Sirvo como límite espacial para mis hijos que tengan posición absoluta.
+        
+        <div class="caja-hija">
+            Soy el Hijo (absolute)
+        </div>
+    </div>
+    <p>Sigue haciendo scroll...</p>
+
+    <div class="boton-flotante">
+        +
+    </div>
+
+</body>
+</html>
