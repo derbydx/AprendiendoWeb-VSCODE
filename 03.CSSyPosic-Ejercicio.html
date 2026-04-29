@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio: Garaje Digital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            height: 1500px; /* Altura extra para probar el scroll */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .contenedor-garaje {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        /* ---------------------------------------------------
+           TAREA 1: LA TARJETA DEL VEHÍCULO (El Padre)
+           --------------------------------------------------- */
+        .tarjeta-vehiculo {
+            background-color: #34495e;
+            width: 300px;
+            height: 400px;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            
+            /* TU TAREA AQUÍ: 
+               ¿Qué posición debe tener esta tarjeta para que 
+               las etiquetas (hijas) se muevan dentro de ella 
+               y no por toda la pantalla? */
+            position: relative; 
+        }
+
+        /* ---------------------------------------------------
+           TAREA 2: LA ETIQUETA DESTACADO (El Hijo)
+           --------------------------------------------------- */
+        .etiqueta-destacado {
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            
+            /* TU TAREA AQUÍ: 
+               1. Dale la posición necesaria para que se mueva libremente DENTRO de la tarjeta.
+               2. Ubícala a 15 píxeles del borde superior (top).
+               3. Ubícala a -10 píxeles del borde derecho (right) para que sobresalga un poco. */
+            position: ;
+            top: 15px;
+            right: -10px;
+        }
+
+        /* ---------------------------------------------------
+           TAREA 3: EL BOTÓN DE CONTACTO (Flotante)
+           --------------------------------------------------- */
+        .boton-contacto {
+            background-color: #f1c40f;
+            color: #333;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            
+            /* TU TAREA AQUÍ: 
+               1. Dale la posición que ignora todo y se pega a la pantalla del navegador.
+               2. Ubícalo a 30 píxeles del fondo (bottom).
+               3. Ubícalo a 30 píxeles de la izquierda (left). */
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mi Garaje Digital</h1>
+    <p style="text-align: center;">Haz scroll para ver cómo interactúan los elementos.</p>
+
+    <div class="contenedor-garaje">
+        
+        <div class="tarjeta-vehiculo">
+            <div class="etiqueta-destacado">V8 Power</div>
+            <h2>Ford Mustang</h2>
+            <p>Deportivo clásico americano con motor V8 de 5.0 litros.</p>
+        </div>
+
+        <div class="tarjeta-vehiculo">
+            <div class="etiqueta-destacado">Custom</div>
+            <h2>Harley-Davidson</h2>
+            <p>Estilo chopper inconfundible, lista para rodar por la carretera.</p>
+        </div>
+
+    </div>
+
+    <a href="#" class="boton-contacto">Agendar Prueba de Manejo</a>
+
+</body>
+</html>
