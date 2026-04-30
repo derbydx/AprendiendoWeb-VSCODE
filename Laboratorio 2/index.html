@@ -70,7 +70,6 @@
     </section>
     
 
-
     <!-- <article>
         <img src="ramo-cumpleanos.jpg" alt="Ramo de flores coloridas para cumpleaños">
         <h3>Ramo de Cumpleaños</h3>
@@ -101,7 +100,37 @@
     </section>
 
        <!--SEccion de contacto   --->
-<section id="contacto"> 
+<section id="contacto">
+    <h2> Contáctanos</h2>
+    <form>
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" name="nombre"
+        placeholder="Tu nombre completo" 
+        autocomplete="name"
+        required>
+
+        <label for="correo"> Correo electrónico:</label>
+        <input type="email" id="correo" name="correo"
+        placeholder="Ej:derby@gmail.com"
+        autocomplete="email"
+        required>
+
+        <label for="telefono"> Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono"
+        placeholder="Ej: 123-456-7890"
+        autocomplete="tel"
+        pattern="[0-9]+ ]{7,15}"
+        title="Ingrese un número valido de 7 a 15 digitos">
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required
+        placeholder="Escribe tu mensaje aquí..."></textarea>
+
+        <button type ="submit" class="btn enviar">Enviar Mensaje</button>
+    </form>
+</section>
+
+<!-- <section id="contacto"> 
     <h2> Contáctanos</h2>
     <form>
         <Label for="nombre">Nombre:</Label>
@@ -113,7 +142,7 @@
         <label for="mensaje">Mensaje:</label>
         <textarea id="mensaje" name="mensaje" required></textarea>
     </form>
-</section>
+</section> -->
 
 
 <!--Pie de página   --->
