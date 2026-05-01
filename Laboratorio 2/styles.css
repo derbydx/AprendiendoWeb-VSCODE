@@ -33,20 +33,22 @@ p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
 }
 
-/* Ipmortar fuentes */
-@import url('https://fonts.googleapis.com/css2?family=Poppings:wght@400;600;700&family=Lora:wgh@400;700&display=swap');
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:wght@400;700&display=swap');
 
 body {
     font-family: var (--font-primary);
     color : var(--color-text);
     background-color: var(--color-background);
     font-size: clamp(1rem, 2.5vw, 1.125rem);
+
 }
 
 h1 {
     font-size: clamp(2rem, 5vw, 3rem);
     line-height: 1.2;
     margin-bottom: var(--space-md);
+    
 }
 
 h3{
@@ -60,4 +62,104 @@ line-height: 1.4;
     --color-primary: #4caf50;
     --color-primary-dark: #388e3c;
     --color-primary-light: #c8e6c9;
+
+
+/* Colores neutros*/ 
+--color-text: #212121;
+--color-text-light: #757575;
+--color-background: #ffffff;
+--color-surface: #f5f5f5;
+
+/* Sistema tipográfico */
+--font-primary: 'Poppins', sans-serif;
+--font-secondary: 'Lora', serif;
+
+/* Escala de espacios 8px base*/
+--space-xs: 0.5rem; /* 4px */
+--space-sm: 1rem;   /* 8px */
+--space-md: 1.5rem; /* 12px */
+--space-lg: 2rem;   /* 16px */
+--space-xl: 3rem;   /* 24px */
+
+/*Bordes y sombras */
+--border-radius: 0.5rem;
+--border-radius-lg: 1rem;
+
+/*sombras*/
+--shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+--shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 44px; /*Accesibilidad touch*/
+}
+
+.btn--primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn--primary:hover 
+.btn--primary:focus {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn:focus-visible {
+outline: 2px solid var(--color-primary);
+outline-offset: 2px;
+
+}
+
+/*Formularios basicos*/
+.form-group {
+   margin-bottom: var(--space-md); 
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-weight: 600;
+    color: var(--color-text)
+
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 2px solid var(--color-primary-light);
+    border-radius: var(--border-radius);
+    background-color: var(--color-background);
+    transition: border-color 0.2s ease;
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow:  0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/*validacion nativa*/
+.form-input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #dc3545;
+}
+
+.form-input:valid:not(:focus){
+    border-color: #28a745;
+}
+
+/*paso 5 Posicionanmiento y layoutrs*/
+
+
+
