@@ -1,0 +1,63 @@
+modern Css Reset 
+*, *::before,
+ *::after {
+    box-sizing: border-box;
+
+}
+
+* {
+    margin : 0;
+    padding: 0;
+}
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    max-width: 100%;
+    display: block;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* Ipmortar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Poppings:wght@400;600;700&family=Lora:wgh@400;700&display=swap');
+
+body {
+    font-family: var (--font-primary);
+    color : var(--color-text);
+    background-color: var(--color-background);
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+}
+
+h3{
+font-size: clamp(1.25rem, 3vw, 1.75rem);
+line-height: 1.4;
+
+}
+
+/* Variables CSS */
+:root {
+    --color-primary: #4caf50;
+    --color-primary-dark: #388e3c;
+    --color-primary-light: #c8e6c9;
+}
