@@ -10,28 +10,42 @@
     
 <!--Enlace de Salto para accesibilidad ---->
     
-<a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+<!-- <a href="#contenido" class="skip-link">Saltar al contenido principal</a> -->
 
 <!--Encabezado  ---->
-<header>
-    <div class="logo">💕Flores del Alma</div> 
-    <nav>
+<header class="header">
+    <a href="#main" class="skip-link">Saltar al contenido principal</a>
+    <!-- <div class="logo">💕Flores del Alma</div>  -->
+     <div class="header_container">
+        <img src="logo.svg" alt="Logo de Flores del Alma" class="header_logo">
+        <nav class="header-nav">
+            <ul class="header_menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+
+            </ul>
+        </nav>
+        </div>
+    <!-- <nav>
         <ul>
             <li><a href="#inicio" aria-current="page">Inicio</a></li>
             <li><a href="#catalogo">Catálogo</a></li>
             <li><a href="#testimonios">Testimonios</a></li>            
             <li><a href="#contacto">Contacto</a></li>
         </ul>
-       </nav>
+       </nav> -->
     </header>
 <!--Contenido Principal  ---->
 <main id="contenido">
 
-    <!--SEccion Hero --->
-    <section id="inicio">
+    <!--SEccion Hero Con --->
+    <section class="hero" id="inicio">
+        <div class="hero_content">
         <h1> Flores frescas para cada ocasión</h1>
         <p> Entrega rápida y segura en tu ciudad</p>
-        <button class="cta">Haz tu pedido hoy</button>
+        <a href="#catalogo" class="btn btn-primary">Ver Catálogo</a>
+        </div>
     </section>
 
         <!--SEccion catalogo --->

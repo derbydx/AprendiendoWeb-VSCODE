@@ -161,5 +161,80 @@ outline-offset: 2px;
 
 /*paso 5 Posicionanmiento y layoutrs*/
 
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
+    isolation: isolate;
+}
+.header_logo {
+    width: 60px;
+    height: auto;
+}
 
+.header_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-sd); var(--space-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+/*Pagina 26*/
+.header_menu {
+    display:flex;
+    gap: var(--space-md);
+    list-style: none;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: var(--space-sd);
+    background: var(--color-primary);
+    color:white;
+    padding: var(--space-sm);
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: var(--space-sm);
+}
+
+/*Seccion Hero con Flexbox*/
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+    padding: var(--space-xl) var(--space-md);
+    min-height: 80vh;
+    
+}
+
+.hero_content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.hero_image{
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--border-radius-lg);
+}
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    .hero_content {
+        text-align: left;
+    }
+}
+
+/*AHORA HACER EL CATALOGO DE PRODUCTOS pagina 27*/
