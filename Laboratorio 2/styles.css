@@ -238,3 +238,78 @@ outline-offset: 2px;
 }
 
 /*AHORA HACER EL CATALOGO DE PRODUCTOS pagina 27*/
+
+.products_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    padding: var(--space-lg) 0;
+}
+
+.product-card {
+    position: relative;
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-md);
+    text-align: center;
+}
+
+.product-card_badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--border-radius);
+    font-weight: bold;
+}
+
+@media (min-width: 576px) {
+    .products_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .products_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*Fotter CSS*/
+
+.footer {
+    background: var(--color-text);
+    color: white;
+    padding: var(--space-xl) var(--space-md);
+    margin-top: auto;
+}
+
+.footer_content{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .footer_content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/*LAYOUT GENERAL CON GRID PARA ESTRUCTURA PRINCIPAL*/
+
+.body-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+main {
+    grid-row: 2;
+}
