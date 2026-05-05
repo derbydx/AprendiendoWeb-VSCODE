@@ -280,7 +280,7 @@ outline-offset: 2px;
 /*Fotter CSS*/
 
 .footer {
-    background: var(--color-text);
+    background: var(--color-text-light);
     color: white;
     padding: var(--space-xl) var(--space-md);
     margin-top: auto;
