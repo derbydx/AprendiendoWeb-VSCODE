@@ -319,3 +319,71 @@ main {
 .form_group {
     margin-bottom: var(--space-lg);
 }
+
+.form_input:user-invalid, 
+.form_textarea:user-invalid {
+    border-color: #dc3545;
+}
+
+.form_input:user-valid,
+.form_textarea:user-valid {
+    border-color: #28a745;
+}
+
+.form_error {
+color:#dc3545;
+font-size: 0.875rem;
+margin-top: var(--space-xs);
+min-height: 1.5rem; /*Para evitar salto de contenido*/
+
+}
+
+.form_sucess{
+    background: #d4edda;
+    color: #155724;
+    padding: var(--space-md);
+    border-radius: var(--border-radius);
+    margin-top: var(--space-lg);
+    display: none;
+}
+
+.form_sucess[aria-hidden="false"] {
+    display: block;
+}
+
+.form_checkbox{
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    cursor: pointer;
+
+}
+
+.form_checkbox input[type="checkbox"] {
+    margin-top: 0.2em;
+}
+
+/*Estados del boton loading*/
+
+.btn--loading .btn-text {
+        opacity: 0.7;
+}
+
+.btn--loading .btn_spinner {
+    display: inline-block;
+}
+
+.btn_spinner {
+   display: none;
+    width: 1em;
+    height: 1em;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {transform: rotate(360deg); }
+    
+}
