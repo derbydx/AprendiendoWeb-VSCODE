@@ -191,6 +191,64 @@
 </section> -->
 
 
+   <!--FORMULARIO DE PEDIDOS   --->
+<section class="contact" id="contacto" aria-labelledby="contacto-heading">
+    <h2 id="contacto-heanding">Haz tu pedido</h2>
+
+    <form class="form" id="pedido-form" novalidate>
+        <div class="form_group>
+            <label for="nombre" class="form_label"> Nombre completo*</label>
+            <input type="text" id="nombre" name="nombre" class="form_input" 
+            required minlength="2" maxlength="50"
+            placeholder="Ej: Derby Martinez"
+            aria-describedby="nombre-error">
+            <div id="nombre-error" class="form_error" aria-live="polite"></div>
+        </div>
+
+        <div class="form_group">
+            <label for="email" class="form_label">Email *</label>
+            <input type="email" id="email" name="email" class="form_input"
+            required placeholder="Ej:ejemplo@email.com
+            aria-describedby="email-error">
+            <div id="email-error" class="form_error" aria-live="polite"></div>
+        </div>
+
+        <div class="form_group">
+            <label for="telefono" class="form_label">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" class="form_input"
+            placeholder="Ej: 123-456-7890"
+            pattern="[0-9]{7,15}"
+            title="Ingrese un número válido de 7 a 15 dígitos"
+            aria-describedby="telefono-error">
+            <div id="telefono-error" class="form_error" aria-live="polite"></div>
+        </div>
+
+        <div class="form_group">
+            <label for="mensaje" class="form_label">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" class="form_textarea"
+            rows="4" placeholder="Dedicatoria o instrucciones especiales..."></textarea>
+        </div>
+
+        <div class="form_group">
+            <label class="form_checkbox">
+                <input type="checkbox" name="privacidad" required
+                aria-describedby="privacidad-error">
+                <span> Acepto la <a href="/privacidad" target="_blank" rel="noopener noreferrer">Política de Privacidad</a> *</span>
+            </label>
+            <div id="privacidad-error" class="form_error" aria-live="polite"></div>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--loading" disabled>
+            <span class="btn_text">Enviar Pedido</span>
+            <span class"btn_spinner" aria-hidden="true"></span>    
+        </button>
+    </form>
+
+    <div id="form-sucess" class="form_sucess" aria-live="polite" role="alert"></div>
+</section>  
+<script src="script.js"></script>  
+</body>
+
 <!--Pie de página   --->
 <footer class="footer">
     <div class="footer_content">

@@ -313,3 +313,9 @@ outline-offset: 2px;
 main {
     grid-row: 2;
 }
+
+/*CSS PARA ESTADOS Y ACCESIBILIDAD DEL FORMYLARIO*/
+
+.form_group {
+    margin-bottom: var(--space-lg);
+}
