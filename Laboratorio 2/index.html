@@ -27,41 +27,30 @@
             </ul>
         </nav>
         </div>
-    <!-- <nav>
-        <ul>
-            <li><a href="#inicio" aria-current="page">Inicio</a></li>
-            <li><a href="#catalogo">Catálogo</a></li>
-            <li><a href="#testimonios">Testimonios</a></li>            
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-       </nav> -->
-    </header>
-<!--Contenido Principal  ---->
+</header>
+
 <main id="contenido">
 
-    <!--SEccion Hero Con --->
-    <section class="hero" id="inicio">
-        <div class="hero_content">
+<section class="hero" id="inicio">
+    <div class="hero_content">
         <h1> Flores frescas para cada ocasión</h1>
         <p> Entrega rápida y segura en tu ciudad</p>
         <a href="#catalogo" class="btn btn-primary">Ver Catálogo</a>
-        </div>
-        <img src="ramo-especial.jpg" alt="Ramo de flores frescas variadas" class="hero_image">
-    </section>
+    </div>
+    <img src="ramo-especial.jpg" alt="Ramo de flores frescas variadas" class="hero_image">
+</section>
 
-
-    <!-- CORRECCIÓN: typo "prducts" → "products" -->
-    <section class="products" id="productos">
-        <h2>Nuestros ramos destacados</h2>
-        <div class="products_grid">
-            <article class="product-card">
-                <span class="product-card_badge">Oferta</span>
-                <img src="ramo-aniversario.jpg" alt="Ramo de 12 Rosas Frescas">
-                <h3>Ramo de Rosas Rojas</h3>
-                <p> Perfecto para aniversarios</p>
-                <span class="product-card_price">35.00</span>
-                <button class="btn btn--primary">Agregar al carrito</button>
-            </article> <!-- CORRECCIÓN: </article> faltaba -->
+<section class="products" id="productos">
+    <h2>Nuestros ramos destacados</h2>
+    <div class="products_grid">
+        <article class="product-card">
+            <span class="product-card_badge">Oferta</span>
+            <img src="ramo-aniversario.jpg" alt="Ramo de 12 Rosas Frescas">
+            <h3>Ramo de Rosas Rojas</h3>
+            <p> Perfecto para aniversarios</p>
+            <span class="product-card_price">35.00</span>
+            <button class="btn btn--primary">Agregar al carrito</button>
+        </article>
 
         <article class="product-card"> 
             <span class="product-card_badge">Nuevo</span>
@@ -78,66 +67,12 @@
             <p> Un arreglo vibrante para cualquier ocasión</p>
             <span class="product-card_price">30.00</span>
             <button class="btn btn--primary">Agregar al carrito</button>
-        </article> <!-- CORRECCIÓN: </article> faltaba -->
+        </article>
 
-        </div>
-    </section> <!-- CORRECCIÓN: </section> faltaba -->
+    </div>
+</section>
 
-        <!--SEccion catalogo --->
-   <!-- <section id="catalogo">
-    <h2>Arreglos Destacados</h2>
-
-    <article class="card-producto">
-        <img src="ramo-cumpleanos.jpg"
-            alt="Ramo de flores coloridas para cumpleaños"
-            title="Ramo especial para cumpleañós"
-            loading="lazy">
-        <h3>Ramo de Cumpleaños</h3>
-        <p> Un detalle alegre para celebrar momentos especiales</p>
-        <a href="Catalogo/ramo-cumpleanos.pdf"
-            class="btn"
-            download="ramo-cumpleanos.pdf"
-            aria-label="Descargar catálogo del ramo de cumpleaños">
-            Descargar Catálogo
-        </a>
-        <button class="btn comprar"> Comprar Ahora</button>
-    </article>
-
-    <article class="card-producto">
-        <img src="ramo-aniversario.jpg"
-        alt="ramo de rosas rojas elegantes para aniversario"
-        title="Ramo romático de aniversario"
-        loading="lazy">
-        <h3>Ramo de Aniversario</h3>
-        <p> Un arreglo romántico para celebrar el amor y la unión</p>
-        <a href="Catalogo/ramo-aniversario.pdf"
-        class="btn"
-        download = "ramo-aniversario.pdf"
-        aria-label="Descargar catálogo del ramo de aniversario">
-        Descargar Catálogo
-        </a>
-        <button class="btn comprar"> Comprar Ahora</button>
-    </article>
-    </section>
-     -->
-
-    <!-- <article>
-        <img src="ramo-cumpleanos.jpg" alt="Ramo de flores coloridas para cumpleaños">
-        <h3>Ramo de Cumpleaños</h3>
-    </article>
-
-    <article>
-        <img src="ramo-aniversario.jpg" alt="Ramo de rosas rojas para aniversario">
-        <h3>Ramo de Aniversario</h3>
-    </article>
-
-    <article>
-        <img src="ramo-especial.jpg" alt="Ramo especial con mezcla de girasoles y lirios">
-        <h3>Ramo Especial</h3>
-    </article> -->
-
-   <!--SEccion de Testimonios   --->
-   <section id="testimonios">
+<section id="testimonios">
     <h2> Lo que dicen nuestros clientes</h2>
     <blockquote>
         <p>"El servicio fue excelente, las flores llegaron hermosas."</p>
@@ -146,100 +81,60 @@
     <blockquote>
         <p>"Sorprendí a mi madre en su cumpleaños y quedó feliz"</p>
         <cite>Derby G.</cite>
-        </blockquote>
-    </section>
+    </blockquote>
+</section>
 
-       <!--SEccion de contacto   --->
 <section id="contacto">
     <h2> Contáctanos</h2>
     <form>
         <label for="nombre">Nombre Completo:</label>
-        <input type="text" id="nombre" name="nombre"
-        placeholder="Tu nombre completo" 
-        autocomplete="name"
-        required>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" autocomplete="name" required>
 
         <label for="correo"> Correo electrónico:</label>
-        <input type="email" id="correo" name="correo"
-        placeholder="Ej:derby@gmail.com"
-        autocomplete="email"
-        required>
+        <input type="email" id="correo" name="correo" placeholder="Ej:derby@gmail.com" autocomplete="email" required>
 
         <label for="telefono"> Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono"
-        placeholder="Ej: 123-456-7890"
-        autocomplete="tel"
-        pattern="[0-9]{7,15}"
-        title="Ingrese un número valido de 7 a 15 digitos">
+        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 123-456-7890" autocomplete="tel" pattern="[0-9]{7,15}" title="Ingrese un número valido de 7 a 15 digitos">
 
         <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" required
-        placeholder="Escribe tu mensaje aquí..."></textarea>
+        <textarea id="mensaje" name="mensaje" required placeholder="Escribe tu mensaje aquí..."></textarea>
 
         <button type ="submit" class="btn enviar">Enviar Mensaje</button>
     </form>
 </section>
 
-<!-- <section id="contacto"> 
-    <h2> Contáctanos</h2>
-    <form>
-        <Label for="nombre">Nombre:</Label>
-        <input type="text" id="nombre" name="nombre" required>
-
-        <label for="correo">Correo:</label>
-        <input type="email" id="correo" name="correo" required>
-
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" required></textarea>
-    </form>
-</section> -->
-
-
-   <!--FORMULARIO DE PEDIDOS   --->
-<!-- CORRECCIÓN: id duplicado "contacto" → "pedido" -->
+<!--FORMULARIO DE PEDIDOS   --->
 <section class="contact" id="pedido" aria-labelledby="contacto-heading">
-    <h2 id="contacto-heanding">Haz tu pedido</h2>
+    <h2 id="contacto-heading">Haz tu pedido</h2>
 
     <form class="form" id="pedido-form" novalidate>
-        <!-- CORRECCIÓN: comilla sin cerrar en class="form_group> → "form_group" -->
+
         <div class="form_group">
             <label for="nombre" class="form_label"> Nombre completo*</label>
-            <input type="text" id="nombre" name="nombre" class="form_input" 
-            required minlength="2" maxlength="50"
-            placeholder="Ej: Derby Martinez"
-            aria-describedby="nombre-error">
+            <input type="text" id="nombre" name="nombre" class="form_input" required minlength="2" maxlength="50" placeholder="Ej: Derby Martinez" aria-describedby="nombre-error">
             <div id="nombre-error" class="form_error" aria-live="polite"></div>
         </div>
 
         <div class="form_group">
             <label for="email" class="form_label">Email *</label>
-            <!-- CORRECCIÓN: comilla sin cerrar en placeholder -->
-            <input type="email" id="email" name="email" class="form_input"
-            required placeholder="Ej:ejemplo@email.com"
-            aria-describedby="email-error">
+            <input type="email" id="email" name="email" class="form_input" required placeholder="Ej:ejemplo@email.com" aria-describedby="email-error">
             <div id="email-error" class="form_error" aria-live="polite"></div>
         </div>
 
         <div class="form_group">
             <label for="telefono" class="form_label">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" class="form_input"
-            placeholder="Ej: 123-456-7890"
-            pattern="[0-9]{7,15}"
-            title="Ingrese un número válido de 7 a 15 dígitos"
-            aria-describedby="telefono-error">
+            <input type="tel" id="telefono" name="telefono" class="form_input" placeholder="Ej: 123-456-7890" pattern="[0-9]{7,15}" title="Ingrese un número válido de 7 a 15 dígitos" aria-describedby="telefono-error">
             <div id="telefono-error" class="form_error" aria-live="polite"></div>
         </div>
 
         <div class="form_group">
             <label for="mensaje" class="form_label">Mensaje *</label>
-            <textarea id="mensaje" name="mensaje" class="form_textarea"
-            rows="4" placeholder="Dedicatoria o instrucciones especiales..."></textarea>
+            <textarea id="mensaje" name="mensaje" class="form_textarea" rows="4" placeholder="Dedicatoria o instrucciones especiales..."></textarea>
         </div>
 
         <div class="form_group">
             <label class="form_checkbox">
-                <input type="checkbox" name="privacidad" required
-                aria-describedby="privacidad-error">
+                <input type="checkbox" name="privacidad" required aria-describedby="privacidad-error">
                 <span> Acepto la <a href="/privacidad" target="_blank" rel="noopener noreferrer">Política de Privacidad</a> *</span>
             </label>
             <div id="privacidad-error" class="form_error" aria-live="polite"></div>
@@ -247,17 +142,15 @@
 
         <button type="submit" class="btn btn--primary btn--loading" disabled>
             <span class="btn_text">Enviar Pedido</span>
-            <!-- CORRECCIÓN: class"btn_spinner" → class="btn_spinner" -->
             <span class="btn_spinner" aria-hidden="true"></span>    
         </button>
     </form>
 
-    <div id="form-sucess" class="form_sucess" aria-live="polite" role="alert"></div>
+    <div id="form-success" class="form_sucess" aria-live="polite" role="alert"></div>
 </section>  
 
-</main> <!-- CORRECCIÓN: </main> faltaba -->
+</main>
 
-<!--Pie de página   --->
 <footer class="footer">
     <div class="footer_content">
         <div class="footer_section">
@@ -265,12 +158,12 @@
             <p>Tu floristería de confianza para cada ocasión</p>
         </div>
         <nav class="footer_nav">
-          <a href="#"> Política de privacidad </a>
+            <a href="#"> Política de privacidad </a>
             <a href="#">Términos de servicio</a>
-            </nav>
-            </div>
+        </nav>
+    </div>
 </footer>
 
-<script src="script.js"></script> <!-- CORRECCIÓN: script movido antes de </body> -->
+<script src="script.js"></script>
 </body>
 </html>

@@ -37,7 +37,7 @@ p, h1, h2, h3, h4, h5, h6 {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:wght@400;700&display=swap');
 
 body {
-    font-family: var (--font-primary);
+    font-family: var(--font-primary); /* CORRECCIÓN */
     color : var(--color-text);
     background-color: var(--color-background);
     font-size: clamp(1rem, 2.5vw, 1.125rem);
@@ -179,7 +179,6 @@ outline-offset: 2px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* CORRECCIÓN: punto y coma en medio del valor → espacio correcto */
     padding: var(--space-sm) var(--space-md);
     max-width: 1200px;
     margin: 0 auto;
@@ -195,7 +194,6 @@ outline-offset: 2px;
 .skip-link {
     position: absolute;
     top: -40px;
-    /* CORRECCIÓN: --space-sd no existe → --space-sm */
     left: var(--space-sm);
     background: var(--color-primary);
     color:white;
