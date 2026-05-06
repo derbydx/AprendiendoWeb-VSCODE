@@ -1,4 +1,4 @@
-modern Css Reset 
+/* modern Css Reset */ /* CORRECCIÓN: texto suelto convertido a comentario */
 *, *::before,
  *::after {
     box-sizing: border-box;
@@ -109,7 +109,8 @@ line-height: 1.4;
     color: white;
 }
 
-.btn--primary:hover 
+/* CORRECCIÓN: faltaba coma entre selectores */
+.btn--primary:hover,
 .btn--primary:focus {
     background-color: var(--color-primary-dark);
     transform: translateY(-2px);
@@ -178,7 +179,8 @@ outline-offset: 2px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-sd); var(--space-md);
+    /* CORRECCIÓN: punto y coma en medio del valor → espacio correcto */
+    padding: var(--space-sm) var(--space-md);
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -193,7 +195,8 @@ outline-offset: 2px;
 .skip-link {
     position: absolute;
     top: -40px;
-    left: var(--space-sd);
+    /* CORRECCIÓN: --space-sd no existe → --space-sm */
+    left: var(--space-sm);
     background: var(--color-primary);
     color:white;
     padding: var(--space-sm);

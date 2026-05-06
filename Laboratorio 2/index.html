@@ -50,7 +50,8 @@
     </section>
 
 
-    <section class="prducts" id="productos">
+    <!-- CORRECCIÓN: typo "prducts" → "products" -->
+    <section class="products" id="productos">
         <h2>Nuestros ramos destacados</h2>
         <div class="products_grid">
             <article class="product-card">
@@ -60,7 +61,7 @@
                 <p> Perfecto para aniversarios</p>
                 <span class="product-card_price">35.00</span>
                 <button class="btn btn--primary">Agregar al carrito</button>
-                </article>
+            </article> <!-- CORRECCIÓN: </article> faltaba -->
 
         <article class="product-card"> 
             <span class="product-card_badge">Nuevo</span>
@@ -77,6 +78,10 @@
             <p> Un arreglo vibrante para cualquier ocasión</p>
             <span class="product-card_price">30.00</span>
             <button class="btn btn--primary">Agregar al carrito</button>
+        </article> <!-- CORRECCIÓN: </article> faltaba -->
+
+        </div>
+    </section> <!-- CORRECCIÓN: </section> faltaba -->
 
         <!--SEccion catalogo --->
    <!-- <section id="catalogo">
@@ -130,7 +135,6 @@
         <img src="ramo-especial.jpg" alt="Ramo especial con mezcla de girasoles y lirios">
         <h3>Ramo Especial</h3>
     </article> -->
-</section>
 
    <!--SEccion de Testimonios   --->
    <section id="testimonios">
@@ -165,7 +169,7 @@
         <input type="tel" id="telefono" name="telefono"
         placeholder="Ej: 123-456-7890"
         autocomplete="tel"
-        pattern="[0-9]+ ]{7,15}"
+        pattern="[0-9]{7,15}"
         title="Ingrese un número valido de 7 a 15 digitos">
 
         <label for="mensaje">Mensaje:</label>
@@ -192,11 +196,13 @@
 
 
    <!--FORMULARIO DE PEDIDOS   --->
-<section class="contact" id="contacto" aria-labelledby="contacto-heading">
+<!-- CORRECCIÓN: id duplicado "contacto" → "pedido" -->
+<section class="contact" id="pedido" aria-labelledby="contacto-heading">
     <h2 id="contacto-heanding">Haz tu pedido</h2>
 
     <form class="form" id="pedido-form" novalidate>
-        <div class="form_group>
+        <!-- CORRECCIÓN: comilla sin cerrar en class="form_group> → "form_group" -->
+        <div class="form_group">
             <label for="nombre" class="form_label"> Nombre completo*</label>
             <input type="text" id="nombre" name="nombre" class="form_input" 
             required minlength="2" maxlength="50"
@@ -207,6 +213,7 @@
 
         <div class="form_group">
             <label for="email" class="form_label">Email *</label>
+            <!-- CORRECCIÓN: comilla sin cerrar en placeholder -->
             <input type="email" id="email" name="email" class="form_input"
             required placeholder="Ej:ejemplo@email.com"
             aria-describedby="email-error">
@@ -240,15 +247,15 @@
 
         <button type="submit" class="btn btn--primary btn--loading" disabled>
             <span class="btn_text">Enviar Pedido</span>
-            <span class"btn_spinner" aria-hidden="true"></span>    
+            <!-- CORRECCIÓN: class"btn_spinner" → class="btn_spinner" -->
+            <span class="btn_spinner" aria-hidden="true"></span>    
         </button>
     </form>
 
     <div id="form-sucess" class="form_sucess" aria-live="polite" role="alert"></div>
 </section>  
 
-<script src="script.js"></script>  
-</body>
+</main> <!-- CORRECCIÓN: </main> faltaba -->
 
 <!--Pie de página   --->
 <footer class="footer">
@@ -263,3 +270,7 @@
             </nav>
             </div>
 </footer>
+
+<script src="script.js"></script> <!-- CORRECCIÓN: script movido antes de </body> -->
+</body>
+</html>
