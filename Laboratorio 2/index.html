@@ -3,8 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores del Alma - Landing Page</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Floristería Online | Flores frescas a domicilio</title>
+<meta name="description" content="Envío de flores frescas en 24h. Ramos personalizados para toda ocasión con garantía de frescura.">
+<link rel="canonical" href="https://www.tufloristeria.com/">
+
+<meta property="og:title" content="Floristería Online | Flores frescas a domicilio">
+<meta property="og:description" content="Ramos personalizados con envío el mismo día.">
+<meta property="og:image" content="https://www.tufloristeria.com/img/og-hero.jpg">
+<meta property="og:url" content="https://www.tufloristeria.com/">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FlowerShop",
+  "name": "Floristería Online",
+  "image": "https://www.tufloristeria.com/img/logo.png",
+  "@id": "https://www.tufloristeria.com",
+  "url": "https://www.tufloristeria.com",
+  "telephone": "+34900000000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle de las Flores 123",
+    "addressLocality": "Madrid",
+    "postalCode": "28001",
+    "addressCountry": "ES"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "09:00",
+    "closes": "20:00"
+  }
+}
+</script>
+
+<!-- <header role="banner">
+  <nav aria-label="Navegación principal">
+    <div class="container nav-container">
+      <a href="/" class="logo" aria-label="Floristería Online - Inicio">
+        <img src="logo.svg" alt="" aria-hidden="true">
+        <span>Floristería Online</span>
+      </a>
+      
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+        <span aria-hidden="true">☰</span>
+      </button>
+
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="/ramos">Ramos</a></li>
+        <li><a href="/ocasiones">Ocasiones</a></li>
+        <li><a href="/plantas">Plantas</a></li>
+        <li><a href="/contacto" class="btn-primary">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+</header> -->
+
+<form action="/newsletter" method="POST" class="newsletter-form">
+  <div class="form-group">
+    <label for="email-field" class="form-label">
+      Suscríbete a nuestras ofertas
+      <span class="sr-only">(se abre en una ventana nueva)</span>
+    </label>
+    <div class="input-wrapper">
+      <input 
+        type="email" 
+        id="email-field" 
+        name="email" 
+        required 
+        aria-describedby="email-help"
+        placeholder="ejemplo@correo.com"
+        class="form-input"
+      >
+      <button type="submit" class="btn-submit">Unirse</button>
+    </div>
+    <p id="email-help" class="form-help">
+      No compartiremos tu correo con terceros.
+    </p>
+  </div>
+</form>
 </head>
 <body>
     
