@@ -8,24 +8,27 @@ class FormValidator {
     init() {
         this.form.setAttribute('novalidate', '');
         this.setupEventListeners();
+        // Evaluamos el estado inicial del botón
         this.toggleSubmitButton();
     }
 
     setupEventListeners() {
-        // input en tiempo real
+        // Input en tiempo real
         this.form.addEventListener('input', (e) => {
-            this.validateField(e.target);
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+                this.validateField(e.target);
+            }
             this.toggleSubmitButton();
         });
 
-        // blur
+        // Blur (cuando el usuario sale del campo)
         this.form.addEventListener('blur', (e) => {
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
                 this.validateField(e.target);
             }
         }, true);
 
-        // submit
+        // Submit
         this.form.addEventListener('submit', (e) => {
             e.preventDefault();
             this.handleSubmit();
@@ -56,17 +59,9 @@ class FormValidator {
         field.classList.add('form_input--error');
         field.classList.remove('form_input--valid');
 
-        let message = '';
-
-        if (field.validity.valueMissing) {
-            message = 'Este campo es obligatorio.';
-        } else if (field.validity.typeMismatch) {
-            message = 'Por favor, ingresa un valor válido.';
-        } else if (field.validity.tooShort) {
-            message = `Por favor, ingresa al menos ${field.getAttribute('minlength')} caracteres.`;
-        } else if (field.validity.patternMismatch) {
-            message = 'El formato no es correcto.';
-        }
+        // Utilizamos el API nativo de validación de HTML5
+        // Esto generará automáticamente el mensaje en el idioma del navegador del usuario
+        const message = field.validationMessage;
 
         if (errorElement) {
             errorElement.textContent = message;
@@ -101,7 +96,10 @@ class FormValidator {
     }
 
     async submitFormData() {
+        // Aquí podrías interceptar los datos con un webhook para automatizaciones (ej. n8n)
         const formData = new FormData(this.form);
+        
+        // Simulación de tiempo de red
         await new Promise(resolve => setTimeout(resolve, 1500));
         return { success: true };
     }
@@ -114,6 +112,8 @@ class FormValidator {
     showSuccess() {
         this.successMessage.textContent = '¡Pedido enviado correctamente! Te contactaremos en breve.';
         this.successMessage.setAttribute('aria-hidden', 'false');
+        this.successMessage.style.backgroundColor = '#d4edda';
+        this.successMessage.style.color = '#155724';
     }
 
     showError(message) {
@@ -146,6 +146,7 @@ class FormValidator {
         });
 
         this.successMessage.setAttribute('aria-hidden', 'true');
+        this.toggleSubmitButton(); // Bloquear botón de nuevo al limpiar
     }
 
     moveFocusToSuccess() {
@@ -156,7 +157,7 @@ class FormValidator {
     }
 }
 
-// Inicializar
+// Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
     const validator = new FormValidator('pedido-form');
     validator.init();

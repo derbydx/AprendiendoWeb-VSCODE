@@ -1,8 +1,56 @@
-/* modern Css Reset */ /* CORRECCIÓN: texto suelto convertido a comentario */
-*, *::before,
- *::after {
-    box-sizing: border-box;
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:wght@400;700&display=swap');
 
+/* Variables CSS principales */
+:root {
+    --color-primary: #4caf50;
+    --color-primary-dark: #388e3c;
+    --color-primary-light: #c8e6c9;
+
+    /* Colores neutros */ 
+    --color-text: #212121;
+    --color-text-light: #757575;
+    --color-background: #ffffff;
+    --color-surface: #f5f5f5;
+
+    /* Sistema tipográfico */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Lora', serif;
+
+    /* Escala de espacios 8px base */
+    --space-xs: 0.5rem; /* 4px */
+    --space-sm: 1rem;   /* 8px */
+    --space-md: 1.5rem; /* 12px */
+    --space-lg: 2rem;   /* 16px */
+    --space-xl: 3rem;   /* 24px */
+
+    /* Bordes y sombras */
+    --border-radius: 0.5rem;
+    --border-radius-lg: 1rem;
+
+    /* Sombras */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+
+    /* Breakpoints */
+    --breakpoint-sm: 36em;    
+    --breakpoint-md: 48em;    
+    --breakpoint-lg: 62em;    
+    --breakpoint-xl: 75em;    
+    --breakpoint-xxl: 90em;   
+
+    /* Sistema de tipografía fluida */
+    --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+    --text-xl: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
+    --text-2xl: clamp(2rem, 1.5rem + 2.5vw, 3rem);
+}
+
+/* Modern CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 * {
@@ -11,13 +59,16 @@
 }
 
 html {
-
     scroll-behavior: smooth;
 }
 
 body {
-    line-height: 1.5;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    font-family: var(--font-primary);
+    color : var(--color-text);
+    background-color: var(--color-background);
+    font-size: var(--text-base);
 }
 
 img, picture, video, canvas, svg {
@@ -33,61 +84,20 @@ p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
 }
 
-/* Importar fuentes */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:wght@400;700&display=swap');
-
-body {
-    font-family: var(--font-primary); /* CORRECCIÓN */
-    color : var(--color-text);
-    background-color: var(--color-background);
-    font-size: clamp(1rem, 2.5vw, 1.125rem);
-
-}
-
 h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: var(--text-2xl);
     line-height: 1.2;
     margin-bottom: var(--space-md);
-    
 }
 
-h3{
-font-size: clamp(1.25rem, 3vw, 1.75rem);
-line-height: 1.4;
-
+h2 {
+    font-size: var(--text-xl);
+    line-height: 1.3;
 }
 
-/* Variables CSS */
-:root {
-    --color-primary: #4caf50;
-    --color-primary-dark: #388e3c;
-    --color-primary-light: #c8e6c9;
-
-
-/* Colores neutros*/ 
---color-text: #212121;
---color-text-light: #757575;
---color-background: #ffffff;
---color-surface: #f5f5f5;
-
-/* Sistema tipográfico */
---font-primary: 'Poppins', sans-serif;
---font-secondary: 'Lora', serif;
-
-/* Escala de espacios 8px base*/
---space-xs: 0.5rem; /* 4px */
---space-sm: 1rem;   /* 8px */
---space-md: 1.5rem; /* 12px */
---space-lg: 2rem;   /* 16px */
---space-xl: 3rem;   /* 24px */
-
-/*Bordes y sombras */
---border-radius: 0.5rem;
---border-radius-lg: 1rem;
-
-/*sombras*/
---shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
---shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+h3 {
+    font-size: var(--text-lg);
+    line-height: 1.4;
 }
 
 .btn {
@@ -101,7 +111,7 @@ line-height: 1.4;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
-    min-height: 44px; /*Accesibilidad touch*/
+    min-height: 44px;
 }
 
 .btn--primary {
@@ -109,7 +119,6 @@ line-height: 1.4;
     color: white;
 }
 
-/* CORRECCIÓN: faltaba coma entre selectores */
 .btn--primary:hover,
 .btn--primary:focus {
     background-color: var(--color-primary-dark);
@@ -118,12 +127,18 @@ line-height: 1.4;
 }
 
 .btn:focus-visible {
-outline: 2px solid var(--color-primary);
-outline-offset: 2px;
-
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
-/*Formularios basicos*/
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Formularios basicos */
 .form-group {
    margin-bottom: var(--space-md); 
 }
@@ -132,8 +147,7 @@ outline-offset: 2px;
     display: block;
     margin-bottom: var(--space-xs);
     font-weight: 600;
-    color: var(--color-text)
-
+    color: var(--color-text);
 }
 
 .form-input, .form-textarea {
@@ -151,17 +165,16 @@ outline-offset: 2px;
     box-shadow:  0 0 0 3px rgba(76, 175, 80, 0.1);
 }
 
-/*validacion nativa*/
+/* Validacion nativa visual (CSS) */
 .form-input:invalid:not(:focus):not(:placeholder-shown) {
     border-color: #dc3545;
 }
 
-.form-input:valid:not(:focus){
+.form-input:valid:not(:focus):not(:placeholder-shown){
     border-color: #28a745;
 }
 
-/*paso 5 Posicionanmiento y layoutrs*/
-
+/* Posicionamiento y layouts */
 .header {
     position: sticky;
     top: 0;
@@ -170,6 +183,7 @@ outline-offset: 2px;
     z-index: 10;
     isolation: isolate;
 }
+
 .header_logo {
     width: 60px;
     height: auto;
@@ -184,7 +198,6 @@ outline-offset: 2px;
     margin: 0 auto;
 }
 
-/*Pagina 26*/
 .header_menu {
     display:flex;
     gap: var(--space-md);
@@ -193,58 +206,64 @@ outline-offset: 2px;
 
 .skip-link {
     position: absolute;
-    top: -40px;
+    top: -50px;
     left: var(--space-sm);
     background: var(--color-primary);
-    color:white;
+    color: white;
     padding: var(--space-sm);
     z-index: 100;
+    transition: top 0.2s;
 }
 
 .skip-link:focus {
     top: var(--space-sm);
 }
 
-/*Seccion Hero con Flexbox*/
-
-.hero{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-xl);
-    padding: var(--space-xl) var(--space-md);
-    min-height: 80vh;
-    
+/* Seccion Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding: var(--space-xl) var(--space-md);
+  min-height: 80vh;
+  align-items: center;
 }
 
 .hero_content {
-    text-align: center;
-    max-width: 600px;
+  text-align: center;
+  max-width: 600px;
 }
 
-.hero_image{
-    width: 100%;
-    max-width: 500px;
-    border-radius: var(--border-radius-lg);
-}
-@media (min-width: 768px) {
-    .hero {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-    }
-    .hero_content {
-        text-align: left;
-    }
+.hero_image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--border-radius-lg);
 }
 
-/*AHORA HACER EL CATALOGO DE PRODUCTOS pagina 27*/
+@media (min-width: 48em) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .hero_content {
+    text-align: left;
+    flex: 1;
+  }
+  .hero_image {
+    flex: 1;
+  }
+}
 
+/* Catálogo de Productos */
 .products_grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-lg);
-    padding: var(--space-lg) 0;
+    padding: var(--space-lg) var(--space-md);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .product-card {
@@ -266,33 +285,34 @@ outline-offset: 2px;
     font-weight: bold;
 }
 
-@media (min-width: 576px) {
-    .products_grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+@media (min-width: 36em) {
+    .products_grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (min-width: 992px) {
-    .products_grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+@media (min-width: 62em) {
+    .products_grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/*Fotter CSS*/
-
+/* Footer (Contraste mejorado) */
 .footer {
-    background: var(--color-text-light);
+    background: var(--color-text); /* Cambiado para mejor contraste */
     color: white;
     padding: var(--space-xl) var(--space-md);
     margin-top: auto;
 }
 
-.footer_content{
+.footer_content {
     display: flex;
     flex-direction: column;
     gap: var(--space-lg);
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.footer_nav a {
+    color: white;
+    text-decoration: underline;
+    margin-right: var(--space-md);
 }
 
 @media (min-width: 768px) {
@@ -303,20 +323,14 @@ outline-offset: 2px;
     }
 }
 
-/*LAYOUT GENERAL CON GRID PARA ESTRUCTURA PRINCIPAL*/
-
+/* Layout General */
 .body-wrapper {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
 }
 
-main {
-    grid-row: 2;
-}
-
-/*CSS PARA ESTADOS Y ACCESIBILIDAD DEL FORMYLARIO*/
-
+/* CSS para estados y accesibilidad del Formulario */
 .form_group {
     margin-bottom: var(--space-lg);
 }
@@ -332,14 +346,13 @@ main {
 }
 
 .form_error {
-color:#dc3545;
-font-size: 0.875rem;
-margin-top: var(--space-xs);
-min-height: 1.5rem; /*Para evitar salto de contenido*/
-
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: var(--space-xs);
+    min-height: 1.5rem; 
 }
 
-.form_sucess{
+.form_sucess {
     background: #d4edda;
     color: #155724;
     padding: var(--space-md);
@@ -352,22 +365,20 @@ min-height: 1.5rem; /*Para evitar salto de contenido*/
     display: block;
 }
 
-.form_checkbox{
+.form_checkbox {
     display: flex;
     align-items: flex-start;
     gap: var(--space-sm);
     cursor: pointer;
-
 }
 
 .form_checkbox input[type="checkbox"] {
-    margin-top: 0.2em;
+    margin-top: 0.3em;
 }
 
-/*Estados del boton loading*/
-
-.btn--loading .btn-text {
-        opacity: 0.7;
+/* Estados del boton loading */
+.btn--loading .btn_text {
+    opacity: 0.7;
 }
 
 .btn--loading .btn_spinner {
@@ -375,253 +386,16 @@ min-height: 1.5rem; /*Para evitar salto de contenido*/
 }
 
 .btn_spinner {
-   display: none;
+    display: none;
     width: 1em;
     height: 1em;
     border: 2px solid transparent;
     border-top: 2px solid currentColor;
     border-radius: 50%;
     animation: spin 1s linear infinite;
+    margin-left: 8px;
 }
 
 @keyframes spin {
-    to {transform: rotate(360deg); }
-    
-}
-
-/* Variables de breakpoints (basados en contenido) */
-:root {
-  --breakpoint-sm: 36em;    /* 576px - Mobile grande */
-  --breakpoint-md: 48em;    /* 768px - Tablet */
-  --breakpoint-lg: 62em;    /* 992px - Laptop */
-  --breakpoint-xl: 75em;    /* 1200px - Desktop */
-  --breakpoint-xxl: 90em;   /* 1440px - Desktop grande */
-}
-
-/* Mixins para media queries (opcional con CSS moderno) */
-@custom-media --sm (min-width: 36em);
-@custom-media --md (min-width: 48em);
-@custom-media --lg (min-width: 62em);
-@custom-media --xl (min-width: 75em);
-
-/* Sistema de tipografía fluida */
-:root {
-  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
-  --text-xl: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
-  --text-2xl: clamp(2rem, 1.5rem + 2.5vw, 3rem);
-}
-
-body {
-  font-size: var(--text-base);
-  line-height: 1.6;
-}
-h1 {
-  font-size: var(--text-2xl);
-  line-height: 1.2;
-}
-
-h2 {
-  font-size: var(--text-xl);
-  line-height: 1.3;
-}
-
-h3 {
-  font-size: var(--text-lg);
-}
-/* Contenedor principal */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--space-md);
-}
-
-@media (min-width: 48em) {
-  .container {
-    padding: 0 var(--space-lg);
-  }
-}
-
-/* Grid de productos responsive */
-.products-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-lg);
-  padding: var(--space-lg) 0;
-}
-
-@media (min-width: 36em) {
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 62em) {
-  .products-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 75em) {
-  .products-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Hero responsive */
-.hero {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-  padding: var(--space-xl) var(--space-md);
-  min-height: 80dvh;
-}
-
-@media (min-width: 48em) {
-  .hero {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .hero__content {
-    flex: 1;
-    max-width: 50%;
-  }
-
-  .hero__image {
-    flex: 1;
-    max-width: 45%;
-  }
-}
-
-/*Container Queries para componentes independientes*/
-/* Card component con container queries */
-.product-card {
-  container: card / inline-size;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  padding: var(--space-md);
-  background: var(--color-surface);
-  border-radius: var(--border-radius-lg);
-}
-
-@container card (min-width: 250px) {
-  .product-card {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .product-card__image {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-@container card (min-width: 350px) {
-  .product-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .product-card__image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-}
-/*Navegación responsive con menú hamburguesa*/
-/* Mobile first - menú hamburguesa */
-.nav-toggle {
-  display: block;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: var(--space-sm);
-}
-
-.nav-menu {
-  display: none;
-  flex-direction: column;
-  gap: var(--space-md);
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: var(--color-background);
-  padding: var(--space-md);
-  box-shadow: var(--shadow-md);
-}
-.nav-menu[aria-expanded="true"] {
-  display: flex;
-}
-
-@media (min-width: 48em) {
-  .nav-toggle {
-    display: none;
-  }
-
-  .nav-menu {
-    display: flex;
-    position: static;
-    flex-direction: row;
-    box-shadow: none;
-    padding: 0;
-    background: none;
-  }
-}
-
-/*Imágenes responsive optimizadas*/
-
-<picture>
-  <source
-    media="(min-width: 1200px)"
-    srcset="hero-large.jpg 1x, hero-large@2x.jpg 2x">
-  <source
-    media="(min-width: 768px)"
-    srcset="hero-medium.jpg 1x, hero-medium@2x.jpg 2x">
-  <img
-    src="hero-small.jpg"
-    srcset="hero-small@2x.jpg 2x"
-    alt="Flores frescas delivery"
-    loading="lazy"
-    decoding="async"
-    width="800"
-    height="600">
-</picture>
-
-/* Utilidades de visibilidad */
-.hide-on-mobile {
-  display: none;
-}
-
-@media (min-width: 48em) {
-  .hide-on-mobile {
-    display: block;
-  }
-
-  .hide-on-desktop {
-    display: none;
-  }
-}
-/* Espaciado responsive */
-.padding-responsive {
-  padding: var(--space-md);
-}
-
-@media (min-width: 48em) {
-  .padding-responsive {
-    padding: var(--space-lg);
-  }
-}
-
-@media (min-width: 75em) {
-  .padding-responsive {
-    padding: var(--space-xl);
-  }
+    to { transform: rotate(360deg); }
 }
