@@ -1,0 +1,401 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:wght@400;700&display=swap');
+
+/* Variables CSS principales */
+:root {
+    --color-primary: #4caf50;
+    --color-primary-dark: #388e3c;
+    --color-primary-light: #c8e6c9;
+
+    /* Colores neutros */ 
+    --color-text: #212121;
+    --color-text-light: #757575;
+    --color-background: #ffffff;
+    --color-surface: #f5f5f5;
+
+    /* Sistema tipográfico */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Lora', serif;
+
+    /* Escala de espacios 8px base */
+    --space-xs: 0.5rem; /* 4px */
+    --space-sm: 1rem;   /* 8px */
+    --space-md: 1.5rem; /* 12px */
+    --space-lg: 2rem;   /* 16px */
+    --space-xl: 3rem;   /* 24px */
+
+    /* Bordes y sombras */
+    --border-radius: 0.5rem;
+    --border-radius-lg: 1rem;
+
+    /* Sombras */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+
+    /* Breakpoints */
+    --breakpoint-sm: 36em;    
+    --breakpoint-md: 48em;    
+    --breakpoint-lg: 62em;    
+    --breakpoint-xl: 75em;    
+    --breakpoint-xxl: 90em;   
+
+    /* Sistema de tipografía fluida */
+    --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+    --text-xl: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
+    --text-2xl: clamp(2rem, 1.5rem + 2.5vw, 3rem);
+}
+
+/* Modern CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin : 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-primary);
+    color : var(--color-text);
+    background-color: var(--color-background);
+    font-size: var(--text-base);
+}
+
+img, picture, video, canvas, svg {
+    max-width: 100%;
+    display: block;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+h1 {
+    font-size: var(--text-2xl);
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+}
+
+h2 {
+    font-size: var(--text-xl);
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: var(--text-lg);
+    line-height: 1.4;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 44px;
+}
+
+.btn--primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Formularios basicos */
+.form-group {
+   margin-bottom: var(--space-md); 
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 2px solid var(--color-primary-light);
+    border-radius: var(--border-radius);
+    background-color: var(--color-background);
+    transition: border-color 0.2s ease;
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow:  0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* Validacion nativa visual (CSS) */
+.form-input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #dc3545;
+}
+
+.form-input:valid:not(:focus):not(:placeholder-shown){
+    border-color: #28a745;
+}
+
+/* Posicionamiento y layouts */
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
+    isolation: isolate;
+}
+
+.header_logo {
+    width: 60px;
+    height: auto;
+}
+
+.header_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-sm) var(--space-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header_menu {
+    display:flex;
+    gap: var(--space-md);
+    list-style: none;
+}
+
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: var(--space-sm);
+    background: var(--color-primary);
+    color: white;
+    padding: var(--space-sm);
+    z-index: 100;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: var(--space-sm);
+}
+
+/* Seccion Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding: var(--space-xl) var(--space-md);
+  min-height: 80vh;
+  align-items: center;
+}
+
+.hero_content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.hero_image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--border-radius-lg);
+}
+
+@media (min-width: 48em) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .hero_content {
+    text-align: left;
+    flex: 1;
+  }
+  .hero_image {
+    flex: 1;
+  }
+}
+
+/* Catálogo de Productos */
+.products_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    padding: var(--space-lg) var(--space-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    position: relative;
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-md);
+    text-align: center;
+}
+
+.product-card_badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--border-radius);
+    font-weight: bold;
+}
+
+@media (min-width: 36em) {
+    .products_grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 62em) {
+    .products_grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Footer (Contraste mejorado) */
+.footer {
+    background: var(--color-text); /* Cambiado para mejor contraste */
+    color: white;
+    padding: var(--space-xl) var(--space-md);
+    margin-top: auto;
+}
+
+.footer_content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer_nav a {
+    color: white;
+    text-decoration: underline;
+    margin-right: var(--space-md);
+}
+
+@media (min-width: 768px) {
+    .footer_content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* Layout General */
+.body-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+/* CSS para estados y accesibilidad del Formulario */
+.form_group {
+    margin-bottom: var(--space-lg);
+}
+
+.form_input:user-invalid, 
+.form_textarea:user-invalid {
+    border-color: #dc3545;
+}
+
+.form_input:user-valid,
+.form_textarea:user-valid {
+    border-color: #28a745;
+}
+
+.form_error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: var(--space-xs);
+    min-height: 1.5rem; 
+}
+
+.form_sucess {
+    background: #d4edda;
+    color: #155724;
+    padding: var(--space-md);
+    border-radius: var(--border-radius);
+    margin-top: var(--space-lg);
+    display: none;
+}
+
+.form_sucess[aria-hidden="false"] {
+    display: block;
+}
+
+.form_checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    cursor: pointer;
+}
+
+.form_checkbox input[type="checkbox"] {
+    margin-top: 0.3em;
+}
+
+/* Estados del boton loading */
+.btn--loading .btn_text {
+    opacity: 0.7;
+}
+
+.btn--loading .btn_spinner {
+    display: inline-block;
+}
+
+.btn_spinner {
+    display: none;
+    width: 1em;
+    height: 1em;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 8px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

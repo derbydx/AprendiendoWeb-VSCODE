@@ -1,34 +1,48 @@
+/**
+ * FormValidator
+ * Maneja validación en tiempo real y envío para formularios HTML.
+ * 
+ * @param {string} formId        - ID del formulario a validar
+ * @param {string} successId     - ID del div donde mostrar el mensaje de éxito/error
+ * @param {string} [submitLabel] - Texto de éxito a mostrar tras envío exitoso
+ */
 class FormValidator {
-    constructor(formId) {
+    constructor(formId, successId, submitLabel = '¡Enviado correctamente! Te contactaremos en breve.') {
         this.form = document.getElementById(formId);
-        this.submitButton = this.form.querySelector('button[type="submit"]');
-        this.successMessage = document.getElementById('form-success');
+        if (!this.form) return; // Seguridad: el form no existe en esta página
+
+        this.successMessage = document.getElementById(successId);
+        this.submitButton   = this.form.querySelector('button[type="submit"]');
+        this.submitLabel    = submitLabel;
     }
 
     init() {
+        if (!this.form) return;
+
         this.form.setAttribute('novalidate', '');
         this.setupEventListeners();
-        // Evaluamos el estado inicial del botón
         this.toggleSubmitButton();
     }
 
     setupEventListeners() {
-        // Input en tiempo real
+        // Validación en tiempo real al escribir
         this.form.addEventListener('input', (e) => {
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
-                this.validateField(e.target);
+            const el = e.target;
+            if (el.matches('input, textarea, select')) {
+                this.validateField(el);
             }
             this.toggleSubmitButton();
         });
 
-        // Blur (cuando el usuario sale del campo)
+        // Validación al salir del campo (blur)
         this.form.addEventListener('blur', (e) => {
-            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
-                this.validateField(e.target);
+            const el = e.target;
+            if (el.matches('input, textarea, select')) {
+                this.validateField(el);
             }
         }, true);
 
-        // Submit
+        // Envío del formulario
         this.form.addEventListener('submit', (e) => {
             e.preventDefault();
             this.handleSubmit();
@@ -36,36 +50,35 @@ class FormValidator {
     }
 
     validateField(field) {
-        const errorElement = document.getElementById(`${field.id}-error`);
+        const errorEl = document.getElementById(`${field.id}-error`);
 
         if (field.validity.valid) {
-            this.setFieldValid(field, errorElement);
+            this.setFieldValid(field, errorEl);
         } else {
-            this.setFieldInvalid(field, errorElement);
+            this.setFieldInvalid(field, errorEl);
         }
     }
 
-    setFieldValid(field, errorElement) {
+    setFieldValid(field, errorEl) {
         field.classList.remove('form_input--error');
         field.classList.add('form_input--valid');
 
-        if (errorElement) {
-            errorElement.textContent = '';
-            errorElement.setAttribute('aria-hidden', 'true');
+        if (errorEl) {
+            errorEl.textContent = '';
+            errorEl.setAttribute('aria-hidden', 'true');
         }
     }
 
-    setFieldInvalid(field, errorElement) {
+    setFieldInvalid(field, errorEl) {
         field.classList.add('form_input--error');
         field.classList.remove('form_input--valid');
 
-        // Utilizamos el API nativo de validación de HTML5
-        // Esto generará automáticamente el mensaje en el idioma del navegador del usuario
+        // Mensaje en el idioma del navegador del usuario (API nativa de validación HTML5)
         const message = field.validationMessage;
 
-        if (errorElement) {
-            errorElement.textContent = message;
-            errorElement.setAttribute('aria-hidden', 'false');
+        if (errorEl) {
+            errorEl.textContent = message;
+            errorEl.setAttribute('aria-hidden', 'false');
         }
     }
 
@@ -84,42 +97,55 @@ class FormValidator {
 
         try {
             await this.submitFormData();
-            this.showSuccess();
+            this.showSuccess(this.submitLabel);
             this.form.reset();
             this.resetValidation();
             this.moveFocusToSuccess();
         } catch (error) {
-            this.showError('Error al enviar el formulario. Por favor, inténtalo de nuevo.');
+            console.error('Error en el envío:', error);
+            this.showError('Error al enviar. Por favor, inténtalo de nuevo.');
         } finally {
             this.setLoadingState(false);
         }
     }
 
     async submitFormData() {
-        // Aquí podrías interceptar los datos con un webhook para automatizaciones (ej. n8n)
-        const formData = new FormData(this.form);
-        
-        // Simulación de tiempo de red
+        /**
+         * Aquí puedes conectar con tu backend, API o webhook (ej. n8n).
+         * Ejemplo real:
+         * 
+         * const formData = new FormData(this.form);
+         * const response = await fetch('https://tu-webhook.com/endpoint', {
+         *     method: 'POST',
+         *     body: formData
+         * });
+         * if (!response.ok) throw new Error('Error del servidor');
+         * return response.json();
+         */
+
+        // Simulación de tiempo de red (eliminar cuando conectes el backend real)
         await new Promise(resolve => setTimeout(resolve, 1500));
         return { success: true };
     }
 
-    setLoadingState(loading) {
-        this.submitButton.classList.toggle('btn--loading', loading);
-        this.submitButton.disabled = loading;
+    setLoadingState(isLoading) {
+        this.submitButton.classList.toggle('btn--loading', isLoading);
+        this.submitButton.disabled = isLoading;
     }
 
-    showSuccess() {
-        this.successMessage.textContent = '¡Pedido enviado correctamente! Te contactaremos en breve.';
+    showSuccess(message) {
+        if (!this.successMessage) return;
+        this.successMessage.textContent = message;
+        this.successMessage.style.backgroundColor = 'var(--color-success-bg)';
+        this.successMessage.style.color            = 'var(--color-success-text)';
         this.successMessage.setAttribute('aria-hidden', 'false');
-        this.successMessage.style.backgroundColor = '#d4edda';
-        this.successMessage.style.color = '#155724';
     }
 
     showError(message) {
+        if (!this.successMessage) return;
         this.successMessage.textContent = message;
-        this.successMessage.style.backgroundColor = '#f8d7da';
-        this.successMessage.style.color = '#721c24';
+        this.successMessage.style.backgroundColor = 'var(--color-error-bg)';
+        this.successMessage.style.color            = 'var(--color-error-text)';
         this.successMessage.setAttribute('aria-hidden', 'false');
     }
 
@@ -127,10 +153,8 @@ class FormValidator {
         const fields = this.form.querySelectorAll('input, textarea, select');
         fields.forEach(field => this.validateField(field));
 
-        const firstInvalidField = this.form.querySelector(':invalid');
-        if (firstInvalidField) {
-            firstInvalidField.focus();
-        }
+        const firstInvalid = this.form.querySelector(':invalid');
+        if (firstInvalid) firstInvalid.focus();
     }
 
     resetValidation() {
@@ -139,26 +163,46 @@ class FormValidator {
             field.classList.remove('form_input--error', 'form_input--valid');
         });
 
-        const errors = this.form.querySelectorAll('.form_error');
-        errors.forEach(error => {
-            error.textContent = '';
-            error.setAttribute('aria-hidden', 'true');
+        this.form.querySelectorAll('.form_error').forEach(el => {
+            el.textContent = '';
+            el.setAttribute('aria-hidden', 'true');
         });
 
-        this.successMessage.setAttribute('aria-hidden', 'true');
-        this.toggleSubmitButton(); // Bloquear botón de nuevo al limpiar
+        if (this.successMessage) {
+            this.successMessage.setAttribute('aria-hidden', 'true');
+        }
+
+        this.toggleSubmitButton();
     }
 
     moveFocusToSuccess() {
+        if (!this.successMessage) return;
         setTimeout(() => {
-            this.successMessage.focus();
             this.successMessage.setAttribute('tabindex', '-1');
+            this.successMessage.focus();
         }, 100);
     }
 }
 
+// =========================================
 // Inicializar cuando el DOM esté listo
+// =========================================
 document.addEventListener('DOMContentLoaded', () => {
-    const validator = new FormValidator('pedido-form');
-    validator.init();
+
+    // Formulario de pedido (con validación completa)
+    const pedidoValidator = new FormValidator(
+        'pedido-form',
+        'form-success',
+        '¡Pedido enviado correctamente! Te contactaremos en breve.'
+    );
+    pedidoValidator.init();
+
+    // Formulario de contacto (misma clase, distinto ID)
+    const contactoValidator = new FormValidator(
+        'contacto-form',
+        'contacto-success',
+        '¡Mensaje enviado! Te responderemos lo antes posible.'
+    );
+    contactoValidator.init();
+
 });

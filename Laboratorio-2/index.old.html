@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Flores del Alma | Flores frescas a domicilio</title>
+    <meta name="description" content="Envío de flores frescas en 24h. Ramos personalizados para toda ocasión con garantía de frescura.">
+    <link rel="canonical" href="https://www.floresdelalma.com/">
+
+    <meta property="og:title" content="Flores del Alma | Flores frescas a domicilio">
+    <meta property="og:description" content="Ramos personalizados con envío el mismo día.">
+    <meta property="og:image" content="https://www.floresdelalma.com/img/og-hero.jpg">
+    <meta property="og:url" content="https://www.floresdelalma.com/">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FlowerShop",
+      "name": "Flores del Alma",
+      "image": "https://www.floresdelalma.com/img/logo.png",
+      "@id": "https://www.floresdelalma.com",
+      "url": "https://www.floresdelalma.com",
+      "telephone": "+18090000000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Principal 123",
+        "addressLocality": "Ciudad",
+        "addressCountry": "DO"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    }
+    </script>
+</head>
+<body>
+    
+<a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+<header class="header">
+     <div class="header_container">
+        <img src="logo.svg" alt="Logo de Flores del Alma" class="header_logo">
+        <nav class="header-nav">
+            <ul class="header_menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="contenido">
+
+<section class="hero" id="inicio">
+    <div class="hero_content">
+        <h1>Flores frescas para cada ocasión</h1>
+        <p>Entrega rápida y segura en tu ciudad</p>
+        <a href="#productos" class="btn btn--primary">Ver Catálogo</a>
+    </div>
+    <picture class="hero_image">
+        <source media="(min-width: 1200px)" srcset="hero-large.jpg 1x, hero-large@2x.jpg 2x">
+        <source media="(min-width: 768px)" srcset="hero-medium.jpg 1x, hero-medium@2x.jpg 2x">
+        <img src="ramo-especial.jpg" srcset="hero-small@2x.jpg 2x" alt="Ramo de flores frescas variadas en delivery" loading="lazy" decoding="async" width="800" height="600" style="border-radius: var(--border-radius-lg);">
+    </picture>
+</section>
+
+<section class="products" id="productos">
+    <h2>Nuestros ramos destacados</h2>
+    <div class="products_grid">
+        <article class="product-card">
+            <span class="product-card_badge">Oferta</span>
+            <img src="ramo-aniversario.jpg" alt="Ramo de 12 Rosas Frescas">
+            <h3>Ramo de Rosas Rojas</h3>
+            <p>Perfecto para aniversarios</p>
+            <span class="product-card_price">$35.00</span>
+            <button class="btn btn--primary">Agregar al carrito</button>
+        </article>
+
+        <article class="product-card"> 
+            <span class="product-card_badge">Nuevo</span>
+            <img src="ramo-cumpleanos.jpg" alt="Ramo de flores coloridas para cumpleaños">
+            <h3>Ramo de Cumpleaños</h3>
+            <p>Un detalle alegre para celebrar momentos especiales</p>
+            <span class="product-card_price">$25.00</span>
+            <button class="btn btn--primary">Agregar al carrito</button>
+        </article>
+
+        <article class="product-card">
+            <img src="ramo-especial.jpg" alt="Ramo especial con mezcla de girasoles y lirios">
+            <h3>Ramo Especial</h3>
+            <p>Un arreglo vibrante para cualquier ocasión</p>
+            <span class="product-card_price">$30.00</span>
+            <button class="btn btn--primary">Agregar al carrito</button>
+        </article>
+    </div>
+</section>
+
+<section id="testimonios">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <blockquote>
+        <p>"El servicio fue excelente, las flores llegaron hermosas."</p>
+        <cite>Evelyn J.</cite>
+    </blockquote>
+    <blockquote>
+        <p>"Sorprendí a mi madre en su cumpleaños y quedó feliz."</p>
+        <cite>Derby G.</cite>
+    </blockquote>
+</section>
+
+<section id="contacto">
+    <h2>Contáctanos</h2>
+    <form id="contacto-form">
+        <div class="form_group">
+            <label for="contacto-nombre">Nombre Completo:</label>
+            <input type="text" id="contacto-nombre" name="contacto-nombre" class="form_input" placeholder="Tu nombre completo" autocomplete="name" required>
+        </div>
+
+        <div class="form_group">
+            <label for="contacto-correo">Correo electrónico:</label>
+            <input type="email" id="contacto-correo" name="contacto-correo" class="form_input" placeholder="Ej: derby@gmail.com" autocomplete="email" required>
+        </div>
+
+        <div class="form_group">
+            <label for="contacto-telefono">Teléfono:</label>
+            <input type="tel" id="contacto-telefono" name="contacto-telefono" class="form_input" placeholder="Ej: 809-123-4567" autocomplete="tel" pattern="[0-9]{7,15}" title="Ingrese un número válido de 7 a 15 dígitos">
+        </div>
+
+        <div class="form_group">
+            <label for="contacto-mensaje">Mensaje:</label>
+            <textarea id="contacto-mensaje" name="contacto-mensaje" class="form_textarea" required placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary">Enviar Mensaje</button>
+    </form>
+</section>
+
+<section class="contact" id="pedido" aria-labelledby="pedido-heading">
+    <h2 id="pedido-heading">Haz tu pedido</h2>
+
+    <form class="form" id="pedido-form" novalidate>
+        <div class="form_group">
+            <label for="pedido-nombre" class="form_label">Nombre completo *</label>
+            <input type="text" id="pedido-nombre" name="pedido-nombre" class="form_input" required minlength="2" maxlength="50" placeholder="Ej: Derby Martinez" aria-describedby="pedido-nombre-error">
+            <div id="pedido-nombre-error" class="form_error" aria-live="polite"></div>
+        </div>
+
+        <div class="form_group">
+            <label for="pedido-email" class="form_label">Email *</label>
+            <input type="email" id="pedido-email" name="pedido-email" class="form_input" required placeholder="Ej: ejemplo@email.com" aria-describedby="pedido-email-error">
+            <div id="pedido-email-error" class="form_error" aria-live="polite"></div>
+        </div>
+
+        <div class="form_group">
+            <label for="pedido-telefono" class="form_label">Teléfono</label>
+            <input type="tel" id="pedido-telefono" name="pedido-telefono" class="form_input" placeholder="Ej: 809-123-4567" pattern="[0-9\-\s]{7,15}" title="Ingrese un número válido" aria-describedby="pedido-telefono-error">
+            <div id="pedido-telefono-error" class="form_error" aria-live="polite"></div>
+        </div>
+
+        <div class="form_group">
+            <label for="pedido-mensaje" class="form_label">Mensaje *</label>
+            <textarea id="pedido-mensaje" name="pedido-mensaje" class="form_textarea" rows="4" placeholder="Dedicatoria o instrucciones especiales..."></textarea>
+        </div>
+
+        <div class="form_group">
+            <label class="form_checkbox">
+                <input type="checkbox" id="pedido-privacidad" name="privacidad" required aria-describedby="privacidad-error">
+                <span>Acepto la <a href="privacidad.html" target="_blank" rel="noopener noreferrer">Política de Privacidad</a> *</span>
+            </label>
+            <div id="privacidad-error" class="form_error" aria-live="polite"></div>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--loading" id="btn-enviar-pedido">
+            <span class="btn_text">Enviar Pedido</span>
+            <span class="btn_spinner" aria-hidden="true"></span>    
+        </button>
+    </form>
+
+    <div id="form-success" class="form_sucess" aria-live="polite" role="alert"></div>
+</section>  
+
+</main>
+
+<footer class="footer">
+    <div class="footer_content">
+        <div class="footer_section">
+            <h3>Flores del Alma</h3>
+            <p>Tu floristería de confianza para cada ocasión</p>
+        </div>
+        <nav class="footer_nav">
+            <a href="#">Política de privacidad</a>
+            <a href="#">Términos de servicio</a>
+        </nav>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
