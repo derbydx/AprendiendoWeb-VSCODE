@@ -1,41 +1,89 @@
-/*1 variables (tokens de diseno)*/
-:root{
-    --color-bg:#fff;
-    --color-text:#333;
-    --color-primary:#007bff;
-    --color-secondary:#0056b3;
-    /*otras variables de color, espaciado, tipografia, etc*/
+/*assets/css/styles.css*/
+
+/*capas para organizar la cascada: reset < base < components < utilities*/
+@layer reset, base, components, utilities;
+
+/*1. Reset y Variables (Tokens de diseño)*/
+
+@layer reset {
+    /*Reset CSS básico para eliminar márgenes y padding por defecto*/
+:root {
+/*Paleta de colores semantica*/
+--color-bg: #fff;
+--color-text: #333;
+--color-primary: #2563eb; /*azul moderno*/
+--color-primary-hover: #1d4ed8;
+--color-success: #059669; /*verde para éxito*/
+--color-error: #dc2626; /*rojo para errores*/
+--color-warning: #d97706; /*naranja para advertencias*/
+--color-muted: #6b7280; /*gris para texto secundario*/
+
+/*Escala de espaciado (Base: 1rem = 16px)*/
+--space-1: 0.25 rem; /*4px*/
+--space-2: 0.5 rem; /*8px*/
+--space-3: 1 rem; /*16px*/
+--space-4: 1.5 rem; /*24px*/
+--space-5: 3 rem; /*48px*/
+
+/*Tipografía - Escala Fluida (mobile first)*/
+--fs-bas: 1rem;
+--fs-sm: 0.875rem; 
+--fs-lg: clamp(1.25rem, 4vw, 1.5rem); /*Escala fluida entre 20px y 24px*/
+--fs-xl: clamp(1.5rem, 5vw, 2rem); /*Escala fluida entre 24px y 32px*/
+--fs-2xl: clamp(2rem, 6vw, 3rem); /*Escala fluida entre 32px y 48px*/
+
+--lh-base: 1.6;
+--lh-tight: 1.2;
+
+/*Breakpoints para media queries (paso 4)*/
+--bp-sm: 40rem; /*640px*/
+--bp-md: 64rem; /*1024px*/
+--bp-lg: 80rem; /*1280px*/
+
+/*Bordes y sombras*/
+--border-radius: 0.75rem;/*12px*/
+--border-width: 1px;
+--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+--shadow-md: 0 4px 6px -1px rbg(0 0 0 / 0.1);
+
 }
 
-/*2. Reset basico y box-sizing*/
-*, *::before, *::after{
+/*Reset moderno y box-sizing*/
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+} 
+
+/*Elementos que no existen en HTML aun, pero es buena practica reetear*/
+
+html, body {
+    height: 100%;
+
 }
 
-/*3. Estilos base del cuerpo*/
 body{
-    font-family: system-ui, -apple-system, sans-serif;
-    line-height: 1.6;
-    color: var(--color-text);
-    background-color: var(--color-bg);
-
-
-   } 
-
-   /*4. Utilidades y estilos de componenetes basicos*/
-.skip-link{
-position: absolute;
-top: -40px;
-left: 0;
-background: #000;
-color: #fff;
-padding: 8px;
-z-index: 100;
-text-decoration:none;
+    line-height: var(--lh-base);
+    -wekbkit-font-smoothing: antialiased; /*mejora renderizdo en webkit*/
 }
-.skip-link:focus{
-top: 0;
+
+/*Hacer que las imagenes y medios sean responsives por defecto*/
+img,picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+} 
+/*Mejorar el comportamiento por defecto de los elementos de formulario*/
+input, button, textarea, select{
+
+    font: inherit;
+}
+
+/*Evitar desbordamiento de texto en elemento de texto largos*/
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+} 
+
+
 
 }
