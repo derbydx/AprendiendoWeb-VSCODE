@@ -31,6 +31,8 @@ function setupFormSimulation(){
     }
 }
 
+/*Comentario para prueba*/
+
 //Inicializamos funciones al cargar la página
 document.addEventListener('DOMContentLoaded', function(){
     updateFooterYear();
