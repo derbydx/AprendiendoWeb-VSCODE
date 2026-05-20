@@ -76,6 +76,8 @@ function setupNavigation() {
     }
 }
 
+
+
 // Inicializamos funciones al cargar la página
 // No olvides actualizar tu inicialización:
 document.addEventListener('DOMContentLoaded', function(){
