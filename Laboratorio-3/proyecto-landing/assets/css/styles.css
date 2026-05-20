@@ -1,90 +1,87 @@
-/*assets/css/styles.css*/
+/* assets/css/styles.css */
 
-/*capas para organizar la cascada: reset < base < components < utilities*/
+/* Capas para organizar la cascada: reset < base < components < utilities */
 @layer reset, base, components, utilities;
 
-/*1. Reset y Variables (Tokens de diseño)*/
-
+/* 1. Reset y Variables (Tokens de diseño) */
 @layer reset {
-    /*Reset CSS básico para eliminar márgenes y padding por defecto*/
-:root {
-/*Paleta de colores semantica*/
---color-bg: #fff;
---color-text: #333;
---color-primary: #2563eb; /*azul moderno*/
---color-primary-hover: #1d4ed8;
---color-success: #059669; /*verde para éxito*/
---color-error: #dc2626; /*rojo para errores*/
---color-warning: #d97706; /*naranja para advertencias*/
---color-muted: #6b7280; /*gris para texto secundario*/
+    /* Reset CSS básico para eliminar márgenes y padding por defecto */
+    :root {
+        /* Paleta de colores semántica */
+        --color-bg: #fff;
+        --color-text: #333;
+        --color-primary: #2563eb; /* azul moderno */
+        --color-primary-hover: #1d4ed8;
+        --color-success: #059669; /* verde para éxito */
+        --color-error: #dc2626; /* rojo para errores */
+        --color-warning: #d97706; /* naranja para advertencias */
+        --color-muted: #6b7280; /* gris para texto secundario */
 
-/*Escala de espaciado (Base: 1rem = 16px)*/
---space-1: 0.25 rem; /*4px*/
---space-2: 0.5 rem; /*8px*/
---space-3: 1 rem; /*16px*/
---space-4: 1.5 rem; /*24px*/
---space-5: 3 rem; /*48px*/
+        /* Escala de espaciado (Base: 1rem = 16px) */
+        --space-1: 0.25rem; /* 4px */
+        --space-2: 0.5rem; /* 8px */
+        --space-3: 1rem; /* 16px */
+        --space-4: 1.5rem; /* 24px */
+        --space-5: 3rem; /* 48px */
 
-/*Tipografía - Escala Fluida (mobile first)*/
---fs-base: 1rem;
---fs-sm: 0.875rem; 
---fs-lg: clamp(1.25rem, 4vw, 1.5rem); /*Escala fluida entre 20px y 24px*/
---fs-xl: clamp(1.5rem, 5vw, 2rem); /*Escala fluida entre 24px y 32px*/
---fs-2xl: clamp(2rem, 6vw, 3rem); /*Escala fluida entre 32px y 48px*/
+        /* Tipografía - Escala Fluida (mobile first) */
+        --fs-base: 1rem;
+        --fs-sm: 0.875rem; 
+        --fs-lg: clamp(1.25rem, 4vw, 1.5rem); /* Escala fluida entre 20px y 24px */
+        --fs-xl: clamp(1.5rem, 5vw, 2rem); /* Escala fluida entre 24px y 32px */
+        --fs-2xl: clamp(2rem, 6vw, 3rem); /* Escala fluida entre 32px y 48px */
 
---lh-base: 1.6;
---lh-tight: 1.2;
+        --lh-base: 1.6;
+        --lh-tight: 1.2;
 
-/*Breakpoints para media queries (paso 4)*/
---bp-sm: 40rem; /*640px*/
---bp-md: 64rem; /*1024px*/
---bp-lg: 80rem; /*1280px*/
+        /* Breakpoints para media queries (paso 4) */
+        --bp-sm: 40rem; /* 640px */
+        --bp-md: 64rem; /* 1024px */
+        --bp-lg: 80rem; /* 1280px */
 
-/*Bordes y sombras*/
---border-radius: 0.75rem;/*12px*/
---border-width: 1px;
---shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
---shadow-md: 0 4px 6px -1px rbg(0 0 0 / 0.1);
+        /* Bordes y sombras */
+        --border-radius: 0.75rem; /* 12px */
+        --border-width: 1px;
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    }
 
+    /* Reset moderno y box-sizing */
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    } 
+
+    /* Elementos que no existen en HTML aun, pero es buena práctica resetear */
+    html, body {
+        height: 100%;
+    }
+
+    body {
+        line-height: var(--lh-base);
+        -webkit-font-smoothing: antialiased; /* mejora renderizado en webkit */
+    }
+
+    /* Hacer que las imágenes y medios sean responsives por defecto */
+    img, picture, video, canvas, svg {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    } 
+
+    /* Mejorar el comportamiento por defecto de los elementos de formulario */
+    input, button, textarea, select {
+        font: inherit;
+    }
+
+    /* Evitar desbordamiento de texto en elementos de texto largos */
+    p, h1, h2, h3, h4, h5, h6 {
+        overflow-wrap: break-word;
+    } 
 }
 
-/*Reset moderno y box-sizing*/
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-} 
-
-/*Elementos que no existen en HTML aun, pero es buena practica reetear*/
-
-html, body {
-    height: 100%;
-
-}
-
-body{
-    line-height: var(--lh-base);
-    -wekbkit-font-smoothing: antialiased; /*mejora renderizdo en webkit*/
-}
-
-/*Hacer que las imagenes y medios sean responsives por defecto*/
-img,picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-    height: auto;
-} 
-/*Mejorar el comportamiento por defecto de los elementos de formulario*/
-input, button, textarea, select{
-
-    font: inherit;
-}
-
-/*Evitar desbordamiento de texto en elemento de texto largos*/
-p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-} 
-
-/*2. ESTILOS BASE (TIPOGRAFIA, COLORES, ELEMENTOS HTML BASICOS)*/
+/* 2. ESTILOS BASE (TIPOGRAFÍA, COLORES, ELEMENTOS HTML BÁSICOS) */
 @layer base {
     body {
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -94,15 +91,14 @@ p, h1, h2, h3, h4, h5, h6 {
         background-color: var(--color-bg);
     }
 
-    /*Jerarquia de encabezados con escala fluida y margenes controlados*/
-
+    /* Jerarquía de encabezados con escala fluida y márgenes controlados */
     h1, h2, h3, h4, h5, h6 {
         line-height: var(--lh-tight);
         font-weight: 700;
         margin-bottom: var(--space-3);
     }
 
-    h1{
+    h1 {
         font-size: var(--fs-2xl);
         margin-top: var(--space-4);
     }
@@ -110,47 +106,40 @@ p, h1, h2, h3, h4, h5, h6 {
     h2 {
         font-size: var(--fs-xl);
         margin-top: var(--space-4);
-
     }
 
     h3 {
         font-size: var(--fs-lg);
         margin-top: var(--space-4);
-
     }
 
-    p{
-
+    p {
         margin-bottom: var(--space-3);
     }
 
-    /*Estilo para los enlaces*/
+    /* Estilo para los enlaces */
     a {
         color: var(--color-primary);
         text-underline-offset: 0.15em;
     }
 
-    a:hover{
+    a:hover {
         color: var(--color-primary-hover);
-        
     }
 
-    /*Foco accesible y visible (solo navegacion por teclado)*/
-
+    /* Foco accesible y visible (solo navegación por teclado) */
     :focus-visible {
         outline: 2px solid var(--color-primary);
         outline-offset: 2px;
     }
 
-    /*Mejorar la seleccion de texto*/
+    /* Mejorar la selección de texto */
     ::selection {
         background-color: var(--color-primary);
-        color:white;
+        color: white;
     }
 
-
-    /*Respetar la preferencia del usaurio para reducir el movimiento*/
-
+    /* Respetar la preferencia del usuario para reducir el movimiento */
     @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after {
             animation-duration: 0.001s !important;
@@ -159,14 +148,12 @@ p, h1, h2, h3, h4, h5, h6 {
             scroll-behavior: auto !important;
         }
     }
-
-
 }
 
-/*3. COMPONENTES (clases reutilizables para bloques de la pagina)*/
+/* 3. COMPONENTES (clases reutilizables para bloques de la página) */
 @layer components {
-    /*Utilidad para ocultar visualmente elementos pero mantenerlos accesibles*/
-    .sr-only{
+    /* Utilidad para ocultar visualmente elementos pero mantenerlos accesibles */
+    .sr-only {
         position: absolute;
         width: 1px;
         height: 1px;
@@ -176,10 +163,9 @@ p, h1, h2, h3, h4, h5, h6 {
         clip: rect(0, 0, 0, 0);
         white-space: nowrap;
         border-width: 0;
-
     }
 
-    /*Enlace para saltar navegación (mejora accesibilidad) */
+    /* Enlace para saltar navegación (mejora accesibilidad) */
     .skip-link {
         position: absolute;
         top: -100px;
@@ -195,8 +181,7 @@ p, h1, h2, h3, h4, h5, h6 {
         top: 0;
     }
 
-    /*Contenedor principal para centrar contenido y controlar el ancho maximo*/
-
+    /* Contenedor principal para centrar contenido y controlar el ancho máximo */
     .container {
         width: 100%;
         max-width: 1200px;
@@ -204,72 +189,144 @@ p, h1, h2, h3, h4, h5, h6 {
         margin-right: auto;
         padding-left: var(--space-3);
         padding-right: var(--space-3);
+    } 
 
-} 
+    /* Clase utilitaria para secciones con espaciado vertical */
+    .section {
+        padding-top: var(--space-5);
+        padding-bottom: var(--space-5);
+    } 
 
-/*Clase utilitaria para secciones con espaciado vertical*/
-.section {
-    padding-top: var(--space-5);
-    padding-bottom: var(--space-5);
-  
-} 
+    /* Sistema de grilla básico */
+    .grid {
+        display: grid;
+        gap: var(--space-4);
+    } 
 
-/*Sistema de grilla básico*/
-.grid {
-    display: grid;
-    gap: var(--space-4);
+    .grid-3 {
+        grid-template-columns: 1fr; /* 1 columna por defecto en mobile */
+    }
 
-} 
-.grid-3{
-    grid-template-columns: 1fr; /*1 columna por defecto en mobile*/;
+    /* Componente tarjeta card */
+    .card {
+        background: var(--color-bg);
+        border: var(--border-width) solid #e5e7eb; /* gris claro */
+        border-radius: var(--border-radius);
+        padding: var(--space-4);
+        box-shadow: var(--shadow-sm);
+    }
 
+    .card:hover {
+        box-shadow: var(--shadow-md);
+    }  
+
+    /* Componente boton */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--space-2) var(--space-4);
+        border: var(--border-width) solid transparent;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn--primary {
+        background-color: var(--color-primary);
+        color: white;
+    }
+
+    .btn--primary:hover, .btn--primary:focus {
+        background-color: var(--color-primary-hover);
+    } 
+
+    .btn:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    /* Componente de campo de formulario */
+    .field {
+        display: block;
+        margin-bottom: var(--space-1);
+        font-weight: 600;
+    }
+
+    .field input, .field textarea {
+        width: 100%;
+        padding: var(--space-3);
+        border: var(--border-width) solid #d1d5db; /* gris medio */
+        border-radius: var(--border-radius);
+    }
+
+    .field input:focus, .field textarea:focus {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgb(37 99 235 / 0.3); /* sombra azul para foco */
+        outline: none; /* Quitamos el borde por defecto al enfocar porque ya pusimos box-shadow */
+    } 
+
+    .field .error {
+        display: block;
+        margin-top: var(--space-1);
+        color: var(--color-error);
+        font-size: var(--fs-sm);
+    }
+
+    /* estados de validación para formularios (paso 7) */
+    .is-invalid {
+        border-color: var(--color-error) !important;
+    }
+
+    .is-valid {
+        border-color: var(--color-success) !important;
+    }
+
+    /* Label para checkboxes mejorar el area de clic */
+    .checkbox-label {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-2);
+        cursor: pointer;
+        font-weight: normal;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+        margin-top: 0.25rem; /* Alinear mejor con el texto */
+        width: auto;
+    }
+
+    /* Contenedor de estado del formulario */
+    .form-status {
+        margin-top: var(--space-4);
+        padding: var(--space-3);
+        border-radius: var(--border-radius);
+    }
+
+    .form-status[aria-live="polite"] {
+        background-color: #f0f9ff;
+        color: var(--color-primary);
+    }
 }
 
-/*Componente tarjeta card*/
-.card {
-    background: var(--color-bg);
-    border: var(--border-width) solid var#e5e7eb; /*gris claro*/
-    border-radius: var(--border-radius);
-    padding: var(--space-4);
-    box-shadow: var(--shadow-sm);
+/* 4. UTILIDADES (Clases auxiliares para ajustes específicos) */
+@layer utilities {
+    .text-center { text-align: center; }
+    .text-left { text-align: left; }
+    .text-right { text-align: right; }
 
-}
-.card:hover {
-    box-shadow: var(--shadow-md);
+    .mt-1 { margin-top: var(--space-1); }
+    .mt-2 { margin-top: var(--space-2); }
+    .mt-3 { margin-top: var(--space-3); }
+    .mt-4 { margin-top: var(--space-4); }
+    .mt-5 { margin-top: var(--space-5); }
 
-}  
-
-/*Componente boton*/
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-2) var(--space-4);
-    border: var(--border-width) solid transparent;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease, box-shadow 0.2s ease;
-
+    .mb-1 { margin-bottom: var(--space-1); }
+    .mb-2 { margin-bottom: var(--space-2); }
+    .mb-3 { margin-bottom: var(--space-3); }
+    .mb-4 { margin-bottom: var(--space-4); }
+    .mb-5 { margin-bottom: var(--space-5); }
 }
 
-.btn-primary {
-    background-color: var(--color-primary);
-    color: white;
-}
-.btn-primary:hover, .btn-primary:focus {
-    background-color: var(--color-primary-hover);
-    
-} 
-
-.btn:disabled {
-    
-    cursor: not-allowed;
-    opacity: 0.6;
-}
-/*Componente de campo de formulario Field PAGINA 22*/
-
-}
-} 
