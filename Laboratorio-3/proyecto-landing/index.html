@@ -5,144 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DerbyDX - Soluciones Digitales a tu Alcance</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-        <!-- Elfavicon.ico se debe agregar luego -->
-          <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
-    <a href="#main" class="skip-link"> Saltar al contenido principal </a>
+    <a href="#main" class="skip-link">Saltar al contenido principal</a>
+    
     <header>
         <nav class="nav" aria-label="Navegación Rápida">
-            <a href="/" class="nav_logo">DerbyDX</a>
-            <button class="nav_toggle" aria-expanded="false" aria-controls="menu">
+            <a href="/" class="nav__logo">DerbyDX</a>
+            
+            <button class="nav__toggle" aria-expanded="false" aria-controls="menu">
                 <span class="sr-only">Menú</span>
-                <!-- icono de hamburguesa se agregará con CSS o SVG -->
-                </button>
+                ☰
+            </button>
 
-            <ul class="nav_menu" id="menu">
+            <ul class="nav__menu" id="menu">
                 <li><a href="#beneficios">Beneficios</a></li>
                 <li><a href="#testimonios">Testimonios</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-
             </ul>
-                     </nav>
-                     
+        </nav>
     </header>   
 
     <main id="main">
         <section class="hero" aria-labelledby="hero-heading">
             <div class="container">
-            <h1 id="hero-heading">Impulsa tu negocio con soluciones digitales modernas</h1>
-            <p> Ofrecemos herramientas innovadoras diseñadas para hacer crecer tu empresa de manera eficiente y efectiva</p>
-             <a href="#contacto" class="bt btn--primary">Quiero más información</a>
-                </div>
-             </section>
-            <!-- otras secciones, como beneficios, testimonios se agregan en paso 2 -->
+                <h1 id="hero-heading">Impulsa tu negocio con soluciones digitales modernas</h1>
+                <p>Ofrecemos herramientas innovadoras diseñadas para hacer crecer tu empresa de manera eficiente y efectiva.</p>
+                <a href="#contacto" class="btn btn--primary">Quiero más información</a>
+            </div>
+        </section>
 
-            <section id="beneficios" class="section beneficios" aria-labelledby="beneficios-heading">
-                <div class="container">
-                    <h2 id="beneficios-heading">Nuestros Beneficios</h2>
-                    <div class="grid grid-3">
-                        <article class="card">
-                            <h3> Rapidez y Eficiencia</h3>
-                            <p> Automatizamos tus procesos para que ahorres tiempo y recursos, permitiéndote enfocarte en lo que realmente importa: tu negocio.</p>
-                        </article>
-                        <article class="card">
-                            <h3> Escalabilidad</h3>
-                            <p> Nuestras soluciones crecen contigo, sin complicaciones</p>
-                        </article>
-                        <article class="card">
-                            <h3> Soporte 24/7</h3>
-                            <p> Estamos aquí para ayudarte en cualquier momento, garantizando que tu negocio nunca se detenga.</p>
-                        </article>
+        <section id="beneficios" class="section beneficios" aria-labelledby="beneficios-heading">
+            <div class="container">
+                <h2 id="beneficios-heading">Nuestros Beneficios</h2>
+                <div class="grid grid-3">
+                    <article class="card">
+                        <h3>Rapidez y Eficiencia</h3>
+                        <p>Automatizamos tus procesos para que ahorres tiempo y recursos, permitiéndote enfocarte en lo que realmente importa: tu negocio.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Escalabilidad</h3>
+                        <p>Nuestras soluciones crecen contigo, sin complicaciones.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Soporte 24/7</h3>
+                        <p>Estamos aquí para ayudarte en cualquier momento, garantizando que tu negocio nunca se detenga.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="section testimonios" aria-labelledby="testimonios-heading">
+            <div class="container">
+                <h2 id="testimonios-heading">Lo que dicen nuestros clientes</h2>
+                
+                <div class="testimonios-grid">
+                    <blockquote>
+                        <p>"TechSolutions transformó por completo nuestra forma de trabajar. La eficiencia se disparó un 200%."</p>
+                        <footer>- Evelyn Jimenez, <cite>Directora de Marketing en Empresa XYZ</cite></footer>
+                    </blockquote>
+
+                    <blockquote>
+                        <p>"El equipo entendió perfectamente nuestras necesidades. Entregaron el proyecto a tiempo y superando todas nuestras expectativas desde el primer día."</p>
+                        <footer>- Aarón Martínez, <cite>CEO en InnovaCorp</cite></footer>
+                    </blockquote>
+
+                    <blockquote>
+                        <p>"Gracias a sus servicios, logramos escalar nuestro negocio en tiempo récord. Una herramienta indispensable para nuestro crecimiento."</p>
+                        <footer>- Arianny Esther, <cite>Fundadora de StartUp Plus</cite></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section faq" aria-labelledby="faq-heading">
+            <div class="container">
+                <h2 id="faq-heading">Preguntas Frecuentes</h2>
+                <details>
+                    <summary>¿Qué métodos de pago aceptan?</summary>
+                    <p>Aceptamos tarjetas de crédito, transferencias bancarias y PayPal.</p>
+                </details>
+                <details>
+                    <summary>¿Ofrecen garantía?</summary>
+                    <p>Sí, todos nuestros productos tienen una garantía de 30 días.</p>
+                </details>
+            </div>
+        </section>
+
+        <section id="contacto" class="section contacto" aria-labelledby="contacto-heading">
+            <div class="container">
+                <h2 id="contacto-heading">Contáctanos</h2>
+                <form id="form-contacto" class="form">
+                    <div class="form-grid--2">
+                        <div class="field">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+                        </div>
+                        <div class="field">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                        </div>
+                        <div class="field full-width">
+                            <label for="mensaje">Tu mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="¿En qué podemos ayudarte?" minlength="10"></textarea>
+                        </div>
+                        <div class="field full-width">
+                            <label for="consentimiento" class="checkbox-label">
+                                <input type="checkbox" id="consentimiento" name="consentimiento" required>
+                                <span>Acepto la política de privacidad y el envío de información.</span>
+                            </label>
+                        </div>
                     </div>
-                </div>
-            </section>
+                    <button type="submit" class="btn btn--primary mt-3">Enviar mensaje</button>
+                </form>
+                <p class="form-status" aria-live="polite"></p>
+            </div>
+        </section>
+    </main>
 
-
-            <section id="testimonios" class="section testimonios" aria-labelledby="testimonios-heading">
-    <div class="container">
-        <h2 id="testimonios-heading">Lo que dicen nuestros clientes</h2>
-        
-        <blockquote>
-            <p>"TechSolutions transformó por completo nuestra forma de trabajar. La eficiencia se disparó un 200%."</p>
-            <footer>- Evelyn Jimenez, <cite>Directora de Marketing en Empresa XYZ</cite></footer>
-        </blockquote>
-
-        <blockquote>
-            <p>"El equipo entendió perfectamente nuestras necesidades. Entregaron el proyecto a tiempo y superando todas nuestras expectativas desde el primer día."</p>
-            <footer>- Aarón Martínez, <cite>CEO en InnovaCorp</cite></footer>
-        </blockquote>
-
-        <blockquote>
-            <p>"Gracias a sus servicios, logramos escalar nuestro negocio en tiempo récord. Una herramienta indispensable para nuestro crecimiento."</p>
-            <footer>- Arianny Esther, <cite>Fundadora de StartUp Plus</cite></footer>
-        </blockquote>
-        
-    </div>
-</section>
-
-
-<section id="faq" class="section faq" aria-labelledby="faq-heading">
-    <div class="container">
-        <h2 id="faq-heading">Preguntas Frecuentes</h2>
-        <details>
-            <summary>¿Qué métodos de pago aceptan?</summary>
-            <p>Aceptamos tarjetas de crédito, transferencias bancarias y PayPal.</p>
-        </details>
-        <details>
-            <summary>¿Ofrecen garantía?</summary>
-            <p>Sí, todos nuestros productos tienen una garantía de 30 días.</p>
-        </details>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> DerbyDX. Todos los derechos reservados.</p>
+            
+            <address>
+                Contacto: <a href="mailto:info@derbydx.com">info@derbydx.com</a>
+            </address>
+            <nav aria-label="Enlaces legales">
+                <ul>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Términos de Servicio</a></li>
+                </ul>
+            </nav>
         </div>
-</section>
+    </footer>
 
-<section id="contacto" class="section contacto" aria-labelledby="contacto-heading">
-    <div class="container">
-        <h2 id="contacto-heading">Contactanos</h2>
-        <form id="form-contacto" class="form">
-            <div class="field">
-                <label for="nombre">Nombre completo</label>
-                <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
-            </div>
-            <div class="field">
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
-            </div>
-            <div class="field">
-                <label for="mensaje">Tu mensaje</label>
-                <textarea id="mensaje" name="mensaje" rows="5" required placeholder="¿En qué podemos ayudarte?" minlength="10"></textarea>
-            </div>
-            <div class="field">
-                <label for="consentimiento" class="checkbox-label">
-                    <input type="checkbox" id="consentimiento" name="consentimiento" required>
-                    <span>Acepto la política de privacidad y el envío de información.</span>
-                </label>
-            </div>
-            <button type="submit" class="btn btn--primary">Enviar mensaje</button>
-        </form>
-        <p class="form-status" aria-live="polite"></p>
-    </div>
-</section>
-</main>
-
-<footer class="footer">
-    <div class="container">
-        <p>&copy; <span id="current-year"></span> DerbyDX. Todos los derechos reservados.</p>
-        
-        <address>
-            Contacto: <a href="mailto:info@derbydx.com">info@derbydx.com</a>
-        </address>
-        <nav aria-label="Enlaces legales">
-            <ul>
-                <li><a href="#">Política de Privacidad</a></li>
-                <li><a href="#">Términos de Servicio</a></li>
-            </ul>
-        </nav>
-    </div>
-</footer>
-
-<script src="js/script.js" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>
-

@@ -1,5 +1,4 @@
-//Funcion para actualizar ano en el footer
-
+// Función para actualizar año en el footer
 function updateFooterYear() {
     const yearSpan = document.getElementById('current-year');
     if(yearSpan){
@@ -7,8 +6,7 @@ function updateFooterYear() {
     }
 }
 
-//Simulacio de envio de formulario (se reemplazará en el paso 7)
-
+// Simulación de envío de formulario (se reemplazará en el paso 7)
 function setupFormSimulation(){
     const form = document.querySelector('form');
     if (form){
@@ -31,12 +29,26 @@ function setupFormSimulation(){
     }
 }
 
-/*Comentario para prueba*/
+// Controla el menú en móviles
+function setupNavigation() {
+    const toggleBtn = document.querySelector('.nav__toggle');
+    const menu = document.querySelector('.nav__menu');
 
-//Inicializamos funciones al cargar la página
+    if (toggleBtn && menu) {
+        toggleBtn.addEventListener('click', function() {
+            // Verifica si el menú está abierto
+            const isMenuOpen = menu.getAttribute('data-open') === 'true';
+            
+            // Lo cambia al estado contrario
+            menu.setAttribute('data-open', !isMenuOpen);
+            toggleBtn.setAttribute('aria-expanded', !isMenuOpen);
+        });
+    }
+}
+
+// Inicializamos funciones al cargar la página
 document.addEventListener('DOMContentLoaded', function(){
     updateFooterYear();
     setupFormSimulation();
-
-    //Otras inicializaciones pueden ir aquí en los pasos siguientes 
+    setupNavigation();
 });
