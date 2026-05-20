@@ -7,27 +7,57 @@ function updateFooterYear() {
 }
 
 // Simulación de envío de formulario (se reemplazará en el paso 7)
-function setupFormSimulation(){
-    const form = document.querySelector('form');
-    if (form){
-        form.addEventListener('submit', function(e){
+function setupFormValidation() {
+    const form = document.getElementById('form-contacto');
+    const statusMsg = document.querySelector('.form-status');
+
+    if (form) {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-            const submitButton = form.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
+            
+            // 1. Limpiar estados previos
+            form.querySelectorAll('input, textarea').forEach(field => {
+                field.classList.remove('is-invalid', 'is-valid');
+            });
 
-            // Simulamos un proceso de envío
-            submitButton.textContent = 'Enviando...';
-            submitButton.disabled = true;
+            // 2. Validaciones simples
+            let isValid = true;
+            const email = form.querySelector('#email');
+            const mensaje = form.querySelector('#mensaje');
 
-            setTimeout(() => {
-                alert ('Formulario enviado con éxito!');
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
+            // Validar email
+            if (!email.value.includes('@')) {
+                email.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                email.classList.add('is-valid');
+            }
+
+            // Validar longitud mensaje
+            if (mensaje.value.length < 10) {
+                mensaje.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                mensaje.classList.add('is-valid');
+            }
+
+            // 3. Resultado
+            if (isValid) {
+                statusMsg.textContent = "¡Gracias por contactarnos! Tu mensaje ha sido enviado correctamente.";
                 form.reset();
-            }, 1500);
+                // Limpiar clases después de un segundo
+                setTimeout(() => {
+                    form.querySelectorAll('input, textarea').forEach(f => f.classList.remove('is-valid'));
+                }, 2000);
+            } else {
+                statusMsg.textContent = "Por favor, corrige los errores en el formulario.";
+            }
         });
     }
 }
+
+
+});
 
 // Controla el menú en móviles
 function setupNavigation() {
@@ -47,8 +77,10 @@ function setupNavigation() {
 }
 
 // Inicializamos funciones al cargar la página
+// No olvides actualizar tu inicialización:
 document.addEventListener('DOMContentLoaded', function(){
     updateFooterYear();
-    setupFormSimulation();
+    setupFormValidation(); // <-- Reemplaza la antigua función
     setupNavigation();
+
 });
