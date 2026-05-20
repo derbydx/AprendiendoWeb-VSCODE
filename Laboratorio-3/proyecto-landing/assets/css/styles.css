@@ -330,3 +330,149 @@
     .mb-5 { margin-bottom: var(--space-5); }
 }
 
+/* ==========================================================================
+   4. MEDIA QUERIES (Diseño Responsive - Mobile-First)
+   Nota: Este código va al FINAL del archivo, fuera de cualquier @layer
+   ========================================================================== */
+
+/* Estilos base para el menú en móvil (debe ser oculto inicialmente) */
+.nav__menu {
+    /* El JS del Paso 6 se encargará de mostrar/ocultar este menú.
+       Estos estilos definen CÓMO se muestra (ej: como un dropdown). */
+    display: none; /* Oculto por defecto en móvil */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%; /* Lo coloca justo debajo del header */
+    background-color: var(--color-bg);
+    border: var(--border-width) solid #e5e7eb;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-3);
+    flex-direction: column;
+    gap: var(--space-2);
+    z-index: 1000;
+}
+
+/* Clase que el JS agregará/quitará para toggle del menú */
+.nav__menu[data-open="true"] {
+    display: flex;
+    /* Opcional: Animación suave al abrir */
+    /* animation: fadeIn 0.2s ease-out; */
+}
+
+/* Navegación Responsive */
+@media (min-width: 48rem) { /* --bp-md */
+    /* Oculta el botón de toggle del menú en desktop */
+    .nav__toggle {
+        display: none;
+    }
+
+    /* Muestra el menú en línea y ajusta su posición y estilo para desktop */
+    .nav__menu {
+        position: static;
+        flex-direction: row;
+        gap: var(--space-4);
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        /* Esto anula los estilos que ocultan el menú en móvil (que se añadirán con JS/clase) */
+        display: flex !important; /* !important para sobreescribir el estado oculto por JS */
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+
+/* Hero: Si se añade una imagen, se puede usar una grid de 2 columnas en desktop */
+@media (min-width: 64rem) { /* --bp-lg */
+    .hero__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: var(--space-5);
+    }
+}
+
+/* Grillas Responsivas */
+@media (min-width: 40rem) { /* --bp-sm */
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+    }
+}
+
+@media (min-width: 64rem) { /* --bp-lg */
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en desktop */
+    }
+}
+
+/* Formulario Responsive */
+@media (min-width: 48rem) { /* --bp-md */
+    .form-grid--2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+    }
+    /* Asegura que los elementos que deben ocupar 2 columnas lo hagan */
+    .form-grid--2 .field.full-width {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Ajustes de Tipografía y Espaciado para pantallas grandes */
+@media (min-width: 64rem) { /* --bp-lg */
+    body {
+        /* Opcional: Aumentar ligeramente el tamaño base de la fuente */
+        font-size: 1.05rem;
+    }
+
+    .container {
+        /* Aumentar el padding lateral en pantallas muy grandes */
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+    }
+
+    .section {
+        /* Aumentar el espaciado vertical entre secciones */
+        padding-top: var(--space-6); /* Necesitarás definir --space-6 en tu root si no lo tienes */
+        padding-bottom: var(--space-6);
+    }
+
+    h1 {
+        margin-top: var(--space-6);
+    }
+}
+
+/* Testimonios en columnas */
+@media (min-width: 48rem) { /* --bp-md */
+    .testimonios-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+}
+
+/* Buenas prácticas para Imágenes y Medios */
+img {
+    max-width: 100%;
+    height: auto; /* Mantiene la proporción */
+    /* object-fit: cover; Útil para imágenes de fondo que deben llenar un contenedor */
+}
+
+/* Asegurar que los iframes de video sean responsivos */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
